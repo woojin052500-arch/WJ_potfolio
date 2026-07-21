@@ -36,7 +36,9 @@
   --accent: #1C2F63;
   --accent-soft: #EEF1F8;
   --accent-on: #FFFFFF;
+  --ghost: #F4F6FB;
   --shadow: 0 1px 2px rgba(20, 32, 63, .04), 0 8px 24px -12px rgba(20, 32, 63, .12);
+  --shadow-lg: 0 4px 8px rgba(20, 32, 63, .05), 0 24px 48px -16px rgba(20, 32, 63, .18);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -48,40 +50,29 @@
     --accent: #AFC0EE;
     --accent-soft: #1B2749;
     --accent-on: #0C1428;
+    --ghost: #101B36;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+    --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
   }
 }
 :root[data-theme="light"] {
-  --bg: #FFFFFF;
-  --surface: #FFFFFF;
-  --ink: #14203F;
-  --muted: #57617C;
-  --line: #E3E7F0;
-  --accent: #1C2F63;
-  --accent-soft: #EEF1F8;
-  --accent-on: #FFFFFF;
+  --bg: #FFFFFF; --surface: #FFFFFF; --ink: #14203F; --muted: #57617C; --line: #E3E7F0;
+  --accent: #1C2F63; --accent-soft: #EEF1F8; --accent-on: #FFFFFF; --ghost: #F4F6FB;
   --shadow: 0 1px 2px rgba(20, 32, 63, .04), 0 8px 24px -12px rgba(20, 32, 63, .12);
+  --shadow-lg: 0 4px 8px rgba(20, 32, 63, .05), 0 24px 48px -16px rgba(20, 32, 63, .18);
 }
 :root[data-theme="dark"] {
-  --bg: #0C1428;
-  --surface: #131E3A;
-  --ink: #E8ECF6;
-  --muted: #97A2C0;
-  --line: #25314F;
-  --accent: #AFC0EE;
-  --accent-soft: #1B2749;
-  --accent-on: #0C1428;
+  --bg: #0C1428; --surface: #131E3A; --ink: #E8ECF6; --muted: #97A2C0; --line: #25314F;
+  --accent: #AFC0EE; --accent-soft: #1B2749; --accent-on: #0C1428; --ghost: #101B36;
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+  --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
 }
-
 * { box-sizing: border-box; }
-
 :root {
   --font-display: "Outfit", "Pretendard Variable", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --font-body: "Pretendard Variable", -apple-system, "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
 }
-
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
@@ -94,339 +85,289 @@ body {
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;
 }
-
-.wrap { max-width: 940px; margin: 0 auto; padding: 0 22px; }
-
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-
-.display {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -.02em;
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 100;
+  background: var(--accent); color: var(--accent-on);
+  padding: 10px 16px; border-radius: 0 0 8px 0; font-size: 13px; font-weight: 600;
 }
-
+.skip-link:focus { left: 0; }
+.display { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; }
 /* ---------- header ---------- */
-header {
+header.site-header {
   border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--bg) 86%, transparent);
   backdrop-filter: blur(8px);
   position: sticky; top: 0; z-index: 10;
 }
-.header-row {
-  display: flex; align-items: center; justify-content: space-between;
-  min-height: 56px;
-}
-.logo {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  letter-spacing: .02em;
-  padding: 12px 0;
-}
+.header-row { display: flex; align-items: center; justify-content: space-between; min-height: 58px; gap: 16px; }
+.logo { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--ink); letter-spacing: .02em; padding: 12px 0; flex: none; }
 .logo:hover { text-decoration: none; color: var(--accent); }
-nav.top { display: flex; gap: 4px; }
-nav.top a {
-  font-size: 13.5px; color: var(--muted); font-weight: 500;
-  padding: 12px 10px;
+nav.top { display: flex; gap: 2px; background: var(--ghost); border-radius: 999px; padding: 4px; }
+nav.top a { font-size: 13px; color: var(--muted); font-weight: 600; padding: 8px 14px; border-radius: 999px; }
+nav.top a:hover { color: var(--ink); text-decoration: none; }
+nav.top a.active { background: var(--surface); color: var(--accent); box-shadow: var(--shadow); }
+.header-cta { flex: none; }
+@media (max-width: 700px) {
+  nav.top { display: none; }
+  .header-cta .label { display: none; }
 }
-nav.top a:hover { color: var(--accent); text-decoration: none; }
-@media (max-width: 640px) {
-  nav.top a { display: none; }
-  nav.top a.always { display: block; color: var(--accent); font-weight: 600; }
-}
-
-/* ---------- hero ---------- */
-.hero { padding: clamp(60px, 10vw, 96px) 0 clamp(44px, 7vw, 64px); }
-.hero .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 20px;
-}
-.handle {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(52px, 12vw, 112px);
-  line-height: .95;
-  letter-spacing: -.035em;
-  margin: 0 0 10px;
-  color: var(--ink);
-}
-.handle .cursor { color: var(--accent); animation: blink 1.1s step-end infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .handle .cursor { animation: none; } }
-.hero h1 {
-  font-size: clamp(19px, 3.4vw, 26px);
-  font-weight: 700;
-  margin: 28px 0 14px;
-  letter-spacing: -.01em;
-  line-height: 1.5;
-  text-wrap: balance;
-}
-.hero h1 .co { color: var(--accent); }
-.hero p.lede {
-  max-width: 34em;
-  color: var(--muted);
-  font-size: 16.5px;
-  margin: 0 0 32px;
-}
-.hero p.lede b { color: var(--ink); }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+/* ---------- buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  font-size: 14.5px; font-weight: 600;
-  min-height: 46px;
-  padding: 10px 22px;
-  border-radius: 999px;
-  border: 1px solid transparent;
+  font-size: 14.5px; font-weight: 600; min-height: 46px; padding: 10px 22px;
+  border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
 }
 .btn:hover { text-decoration: none; }
+.btn-sm { min-height: 38px; padding: 7px 18px; font-size: 13.5px; }
 .btn-primary { background: var(--accent); color: var(--accent-on); }
 .btn-primary:hover { filter: brightness(1.12); }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: var(--surface); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-@media (max-width: 480px) {
-  .hero-actions .btn { flex: 1 1 100%; }
-}
-
-/* ---------- stats strip ---------- */
-.stats {
+.btn-invert { background: var(--accent-on); color: var(--accent); }
+.btn-invert:hover { filter: brightness(.96); }
+@media (max-width: 480px) { .hero-actions .btn { flex: 1 1 100%; } }
+/* ---------- hero split ---------- */
+.hero-split {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-block: 1px solid var(--line);
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+  padding: clamp(48px, 8vw, 80px) 0 clamp(48px, 8vw, 72px);
 }
-.stat { padding: 26px 20px 24px; border-left: 1px solid var(--line); }
-.stat:first-child { border-left: none; padding-left: 0; }
-.stat .num {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(24px, 3.6vw, 33px);
-  letter-spacing: -.02em;
-  line-height: 1.1;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
+@media (max-width: 860px) { .hero-split { grid-template-columns: 1fr; } }
+.hero-main .eyebrow {
+  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 20px;
 }
-.stat .num small { font-size: .55em; font-weight: 700; }
-.stat .lbl { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
-@media (max-width: 680px) {
-  .stats { grid-template-columns: 1fr 1fr; }
-  .stat { padding: 20px 16px 20px; }
-  .stat:nth-child(odd) { border-left: none; padding-left: 0; }
-  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+.handle {
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(46px, 9vw, 92px);
+  line-height: .95; letter-spacing: -.035em; margin: 0 0 10px; color: var(--ink);
 }
-
+.handle .cursor { color: var(--accent); animation: blink 1.1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .handle .cursor { animation: none; } }
+.hero-main h1 {
+  font-size: clamp(18px, 2.6vw, 24px); font-weight: 700; margin: 26px 0 14px;
+  letter-spacing: -.01em; line-height: 1.5; text-wrap: balance;
+}
+.hero-main h1 .co { color: var(--accent); }
+.hero-main p.lede { max-width: 32em; color: var(--muted); font-size: 16px; margin: 0 0 30px; }
+.hero-main p.lede b { color: var(--ink); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+/* ---------- hero stat cards (bento) ---------- */
+.hero-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.stat-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 20px 18px; box-shadow: var(--shadow);
+  border-top: 3px solid var(--accent);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+@media (prefers-reduced-motion: reduce) { .stat-card:hover { transform: none; } }
+.stat-card .num {
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(22px, 3vw, 28px);
+  letter-spacing: -.02em; line-height: 1.1; color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.stat-card .num small { font-size: .55em; font-weight: 700; }
+.stat-card .lbl { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+@media (max-width: 480px) { .hero-stats { grid-template-columns: 1fr 1fr; } }
 /* ---------- sections ---------- */
-section { padding: clamp(56px, 9vw, 76px) 0 0; }
-.sec-head { margin-bottom: clamp(26px, 5vw, 38px); }
+section { padding: clamp(56px, 9vw, 84px) 0 0; scroll-margin-top: 76px; }
+.sec-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  margin-bottom: clamp(28px, 5vw, 42px);
+}
+.sec-head .head-txt { max-width: 42em; }
 .sec-head .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 8px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 8px;
 }
 .sec-head h2 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(25px, 4.2vw, 34px);
-  letter-spacing: -.02em;
-  margin: 0;
-  color: var(--ink);
-  text-wrap: balance;
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(25px, 4.2vw, 36px);
+  letter-spacing: -.02em; margin: 0; color: var(--ink); text-wrap: balance;
 }
-.sec-head p { color: var(--muted); max-width: 40em; margin: 12px 0 0; font-size: 15px; }
-
-/* ---------- projects ---------- */
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-@media (max-width: 680px) { .grid { grid-template-columns: 1fr; } }
-.card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: clamp(22px, 4vw, 28px);
+.sec-head p { color: var(--muted); margin: 12px 0 0; font-size: 15px; }
+.sec-index {
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted); flex: none;
+  border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px;
+}
+/* ---------- projects : bento grid ---------- */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+  gap: 16px;
+}
+.bento-card {
+  position: relative;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: clamp(24px, 3.4vw, 32px);
   box-shadow: var(--shadow);
-  display: flex; flex-direction: column; gap: 10px;
-  transition: border-color .18s ease, transform .18s ease;
+  display: flex; flex-direction: column; gap: 12px;
+  overflow: hidden;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
 }
-.card:hover { border-color: var(--accent); transform: translateY(-2px); }
-@media (prefers-reduced-motion: reduce) { .card, .card:hover { transform: none; transition: none; } }
-.card.featured { grid-column: 1 / -1; }
-.card .tag {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: 999px;
-  padding: 4px 12px;
-  align-self: flex-start;
+.bento-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+@media (prefers-reduced-motion: reduce) { .bento-card, .bento-card:hover { transform: none; transition: none; } }
+.bento-card .idx {
+  position: absolute; top: 10px; right: 18px;
+  font-family: var(--font-display); font-weight: 800; font-size: 64px;
+  color: var(--ghost); line-height: 1; z-index: 0; user-select: none;
 }
-.card h3 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 21px;
-  letter-spacing: -.01em;
-  margin: 4px 0 0;
-  color: var(--ink);
+.bento-card > * { position: relative; z-index: 1; }
+.bento-card .tag {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 12px; align-self: flex-start;
 }
-.card p { margin: 0; color: var(--muted); font-size: 14.5px; }
-.card .foot {
-  margin-top: auto; padding-top: 14px;
-  border-top: 1px dashed var(--line);
-  display: flex; justify-content: space-between; align-items: baseline;
-  gap: 10px 16px; flex-wrap: wrap;
+.bento-card h3 {
+  font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -.01em;
+  margin: 2px 0 0; color: var(--ink);
 }
-.card .metric { font-size: 13.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
-.card .metric b { color: var(--accent); }
-.card .links { display: flex; gap: 14px; flex-wrap: wrap; }
-.card .links a {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--accent);
+.bento-card p { margin: 0; color: var(--muted); font-size: 14.5px; max-width: 46em; }
+.bento-card .foot {
+  margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--line);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px 16px; flex-wrap: wrap;
 }
-
+.bento-card .metric { font-size: 13.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.bento-card .metric b { color: var(--accent); }
+.bento-card .links { display: flex; gap: 14px; flex-wrap: wrap; }
+.bento-card .links a { font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; color: var(--accent); }
+.c-score { grid-column: 1 / 5; grid-row: 1 / 3; }
+.c-certa { grid-column: 5 / 7; grid-row: 1 / 2; }
+.c-kkeul { grid-column: 5 / 7; grid-row: 2 / 3; }
+.c-ad { grid-column: 1 / 4; grid-row: 3 / 4; }
+.c-grid { grid-column: 4 / 7; grid-row: 3 / 4; }
+.c-score h3 { font-size: 27px; }
+@media (max-width: 860px) {
+  .bento { grid-template-columns: 1fr 1fr; }
+  .c-score { grid-column: 1 / 3; grid-row: auto; }
+  .c-certa, .c-kkeul, .c-ad, .c-grid { grid-column: auto / span 1; grid-row: auto; }
+}
+@media (max-width: 560px) {
+  .bento { grid-template-columns: 1fr; }
+  .c-score, .c-certa, .c-kkeul, .c-ad, .c-grid { grid-column: 1 / -1; }
+  .bento-card .idx { font-size: 48px; }
+}
 .biz-note {
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: 12px;
-  background: var(--surface);
-  padding: 18px 22px;
-  font-size: 14.5px;
-  color: var(--muted);
+  margin-top: 18px; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 12px; background: var(--surface); padding: 18px 22px; font-size: 14.5px; color: var(--muted);
   display: flex; gap: 10px 18px; align-items: baseline; flex-wrap: wrap; justify-content: space-between;
 }
 .biz-note b { color: var(--ink); }
 .biz-note .txt { flex: 1 1 26em; }
 .biz-note a { font-weight: 600; white-space: nowrap; }
-
-/* ---------- awards timeline ---------- */
-.year-block {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 24px;
-  padding: 28px 0;
-  border-top: 1px solid var(--line);
+/* ---------- awards : vertical timeline ---------- */
+.timeline { display: flex; flex-direction: column; }
+.tl-year { position: relative; display: grid; grid-template-columns: 108px 1fr; column-gap: 26px; padding-bottom: 44px; }
+.tl-year:last-child { padding-bottom: 0; }
+.tl-year::before {
+  content: ""; position: absolute; left: 53px; top: 40px; bottom: -4px; width: 2px;
+  background: repeating-linear-gradient(to bottom, var(--line) 0 6px, transparent 6px 11px);
 }
-.year-block:last-of-type { border-bottom: 1px solid var(--line); }
-.year {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 30px;
-  letter-spacing: -.02em;
-  color: var(--accent);
-  line-height: 1.15;
-  font-variant-numeric: tabular-nums;
+.tl-year:last-child::before { display: none; }
+.tl-node { position: relative; display: flex; flex-direction: column; align-items: flex-start; }
+.tl-node .yr {
+  font-family: var(--font-display); font-weight: 800; font-size: 26px; letter-spacing: -.02em;
+  color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums;
 }
-.year small {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .12em;
-  color: var(--muted);
-  margin-top: 4px;
-  text-transform: uppercase;
+.tl-node .yr.mixed { font-size: 17px; }
+.tl-node .dot {
+  width: 13px; height: 13px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+  margin-top: 10px;
 }
-.awards { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
-.awards li { display: flex; gap: 12px; align-items: baseline; }
-.awards .dot {
-  flex: none; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--accent); transform: translateY(-2px);
+.tl-year.other .dot { background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line); }
+.tl-cards { display: flex; flex-direction: column; gap: 10px; }
+.tl-card {
+  background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 12px; padding: 14px 18px; box-shadow: var(--shadow);
+  transition: transform .16s ease, box-shadow .16s ease;
 }
-.awards .t { font-weight: 650; font-size: 15.5px; }
-.awards .d { color: var(--muted); font-size: 13.5px; margin-left: 8px; }
+.tl-card:hover { transform: translateX(3px); box-shadow: var(--shadow-lg); }
+@media (prefers-reduced-motion: reduce) { .tl-card:hover { transform: none; } }
+.tl-card .t { font-weight: 650; font-size: 15.5px; color: var(--ink); }
+.tl-card .d { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
 @media (max-width: 560px) {
-  .year-block { grid-template-columns: 1fr; gap: 12px; padding: 22px 0; }
+  .tl-year { grid-template-columns: 1fr; row-gap: 12px; }
+  .tl-year::before { left: 5px; top: 54px; }
+  .tl-node { flex-direction: row; align-items: center; gap: 10px; }
+  .tl-node .dot { margin-top: 0; }
 }
-
 /* ---------- certifications ---------- */
-.certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-@media (max-width: 680px) { .certs { grid-template-columns: 1fr; } }
+.certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 720px) { .certs { grid-template-columns: 1fr; } }
 .cert {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: var(--shadow);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px;
+  box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
 }
-.cert .issuer {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
+.cert .avatar {
+  width: 40px; height: 40px; border-radius: 12px; background: var(--accent-soft); color: var(--accent);
+  font-family: var(--font-display); font-weight: 800; font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
 }
-.cert h3 { font-size: 16.5px; font-weight: 700; margin: 8px 0 6px; letter-spacing: -.01em; color: var(--ink); }
+.cert .issuer { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.cert h3 { font-size: 16.5px; font-weight: 700; margin: 0; letter-spacing: -.01em; color: var(--ink); }
 .cert p { margin: 0; font-size: 13.5px; color: var(--muted); }
 .cert .badge {
-  display: inline-block; margin-top: 12px;
-  font-size: 12px; font-weight: 600;
-  color: var(--accent); background: var(--accent-soft);
+  display: inline-block; margin-top: auto; align-self: flex-start;
+  font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft);
   border-radius: 999px; padding: 3px 11px;
 }
-
 /* ---------- tech stack ---------- */
-.stack-row {
-  display: grid; grid-template-columns: 155px 1fr; gap: 20px;
-  padding: 19px 0; border-top: 1px solid var(--line);
-  align-items: baseline;
+.stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 780px) { .stack-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .stack-grid { grid-template-columns: 1fr; } }
+.stack-block {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px;
+  box-shadow: var(--shadow);
 }
-.stack-row:last-of-type { border-bottom: 1px solid var(--line); }
-.stack-row .cat {
-  font-family: var(--font-mono);
-  font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--muted); font-weight: 600;
+.stack-block .cat {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600; margin-bottom: 12px; display: block;
 }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
-  font-size: 13.5px; font-weight: 550;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: 999px;
-  padding: 5px 14px;
-  color: var(--ink);
+  font-size: 13.5px; font-weight: 550; border: 1px solid var(--line); background: var(--bg);
+  border-radius: 999px; padding: 5px 14px; color: var(--ink);
 }
 .chip.hl { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); background: var(--accent-soft); color: var(--accent); font-weight: 650; }
 .chip small { opacity: .65; font-size: 12px; }
-.stack-note { color: var(--muted); font-size: 14px; margin: 18px 0 0; max-width: 44em; }
+.stack-note { color: var(--muted); font-size: 14px; margin: 20px 0 0; max-width: 44em; }
 .stack-note b { color: var(--ink); }
-@media (max-width: 560px) { .stack-row { grid-template-columns: 1fr; gap: 8px; padding: 15px 0; } }
-
 /* ---------- now ---------- */
-.now-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-.now-list li { display: flex; gap: 12px; align-items: baseline; color: var(--muted); font-size: 15px; }
-.now-list .arrow { color: var(--accent); font-family: var(--font-mono); flex: none; }
+.now-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 700px) { .now-list { grid-template-columns: 1fr; } }
+.now-list li {
+  display: flex; gap: 14px; align-items: flex-start; color: var(--muted); font-size: 14.5px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px;
+}
+.now-list .n {
+  flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-soft); color: var(--accent);
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
 .now-list b { color: var(--ink); font-weight: 650; }
-
-/* ---------- footer ---------- */
-footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line); }
-.footer-inner { padding: clamp(44px, 7vw, 56px) 0 52px; }
+/* ---------- footer : cta block ---------- */
+footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accent); color: var(--accent-on); }
+.footer-inner { padding: clamp(52px, 8vw, 76px) 0 40px; }
 .footer-cta {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(23px, 4.4vw, 34px);
-  letter-spacing: -.02em;
-  margin: 0 0 22px;
-  line-height: 1.35;
-  color: var(--ink);
-  text-wrap: balance;
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 4.6vw, 38px);
+  letter-spacing: -.02em; margin: 0 0 26px; line-height: 1.35; color: var(--accent-on); text-wrap: balance;
 }
+.footer-contacts { display: flex; gap: 12px; flex-wrap: wrap; }
 .footer-row {
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 14px; margin-top: 40px;
-  font-size: 13px; color: var(--muted);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
+  margin-top: 44px; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--accent-on) 20%, transparent);
+  font-size: 13px; color: color-mix(in srgb, var(--accent-on) 70%, transparent);
 }
+.footer-row a { color: var(--accent-on); }
 .footer-row .mono { font-family: var(--font-mono); font-size: 12.5px; }
-
 /* ---------- reveal ---------- */
 .reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
 .reveal.in { opacity: 1; transform: none; }
@@ -434,65 +375,66 @@ footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line);
 </style>
 </head>
 <body>
-
-
-<header>
+<a class="skip-link" href="#main">본문 바로가기</a>
+<header class="site-header">
   <div class="wrap header-row">
     <a class="logo" href="#top">wxvujn_</a>
-    <nav class="top">
+    <nav class="top" aria-label="주요 섹션">
       <a href="#projects">프로젝트</a>
       <a href="#awards">수상 기록</a>
       <a href="#certs">자격증</a>
       <a href="#stack">테크 스택</a>
-      <a class="always" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener">Instagram</a>
     </nav>
+    <a class="btn btn-primary btn-sm header-cta" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener"><span class="label">Instagram</span> ↗</a>
   </div>
 </header>
-
-<main id="top">
+<main id="main">
   <div class="wrap">
-
-    <!-- HERO -->
-    <div class="hero">
-      <p class="eyebrow">Student Developer · Founder — Portfolio 2026</p>
-      <div class="handle" aria-label="wxvujn_">wxvujn<span class="cursor">_</span></div>
-      <h1>안녕하세요, <span class="co">우진</span>입니다.<br>만들고, 세상에 내보내고, 숫자로 증명합니다.</h1>
-      <p class="lede">에듀테크 스타트업 <b>WJedulab</b> 대표이자 학생 개발자입니다. AI와 함께 아키텍처를 설계하는 바이브 코딩으로 서비스를 빠르게 런칭하고, 트래픽과 매출로 검증하며 성장하고 있습니다.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener">Instagram @WJedulab_archive</a>
-        <a class="btn btn-ghost" href="#projects">프로젝트 보기 ↓</a>
+    <!-- HERO : split layout with bento stat cards -->
+    <section class="hero-split" id="top">
+      <div class="hero-main reveal">
+        <p class="eyebrow">Student Developer · Founder — Portfolio 2026</p>
+        <div class="handle" aria-label="wxvujn_">wxvujn<span class="cursor">_</span></div>
+        <h1>안녕하세요, <span class="co">우진</span>입니다.<br>만들고, 세상에 내보내고, 숫자로 증명합니다.</h1>
+        <p class="lede">에듀테크 스타트업 <b>WJedulab</b> 대표이자 학생 개발자입니다. AI와 함께 아키텍처를 설계하는 바이브 코딩으로 서비스를 빠르게 런칭하고, 트래픽과 매출로 검증하며 성장하고 있습니다.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener">Instagram @WJedulab_archive</a>
+          <a class="btn btn-ghost" href="mailto:woojin052501@gmail.com">woojin052501@gmail.com</a>
+          <a class="btn btn-ghost" href="#projects">프로젝트 보기 ↓</a>
+        </div>
       </div>
-    </div>
-
-    <!-- STATS -->
-    <div class="stats reveal">
-      <div class="stat">
-        <div class="num">84<small>만+</small></div>
-        <div class="lbl">인스타그램 릴스 조회수 — 숏폼 바이럴 콘텐츠 기획</div>
+      <div class="hero-stats reveal">
+        <div class="stat-card">
+          <div class="num">84<small>만+</small></div>
+          <div class="lbl">인스타그램 릴스 조회수 — 숏폼 바이럴 콘텐츠 기획</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">26<small>만 원</small></div>
+          <div class="lbl">'1,000원 광고판' 런칭 4일 만의 매출</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">KOI <small>2입상</small></div>
+          <div class="lbl">제43회 한국정보올림피아드 수상</div>
+        </div>
+        <div class="stat-card">
+          <div class="num"><small>IQ </small>136</div>
+          <div class="lbl">지능지수 — 영재교육원 총 9년 이수</div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="num">26<small>만 원</small></div>
-        <div class="lbl">'1,000원 광고판' 런칭 4일 만의 매출</div>
-      </div>
-      <div class="stat">
-        <div class="num">KOI <small>동상</small></div>
-        <div class="lbl">제43회 한국정보올림피아드 수상</div>
-      </div>
-      <div class="stat">
-        <div class="num"><small>IQ </small>136</div>
-        <div class="lbl">지능지수 — 영재교육원 총 9년 이수</div>
-      </div>
-    </div>
-
-    <!-- PROJECTS -->
+    </section>
+    <!-- PROJECTS : bento grid -->
     <section id="projects">
       <div class="sec-head reveal">
-        <p class="eyebrow">Projects — WJedulab</p>
-        <h2>서비스 포트폴리오</h2>
-        <p>기획부터 개발, 배포, 마케팅까지 직접 운영하는 서비스들입니다.</p>
+        <div class="head-txt">
+          <p class="eyebrow">Projects — WJedulab</p>
+          <h2>서비스 포트폴리오</h2>
+          <p>기획부터 개발, 배포, 마케팅까지 직접 운영하는 서비스들입니다.</p>
+        </div>
+        <span class="sec-index">05 shipped</span>
       </div>
-      <div class="grid">
-        <div class="card featured reveal">
+      <div class="bento">
+        <article class="bento-card c-score reveal">
+          <span class="idx">01</span>
           <span class="tag">Web Platform · EdTech</span>
           <h3>스코어랩 &amp; 스코어위키</h3>
           <p>고입·내신 성적을 분석해 주는 웹 플랫폼. 파편화된 입시 정보와 데이터 부족 문제를 학생의 시각에서 발견하고 직접 해결했습니다. 스코어랩은 성적 분석 도구를, 스코어위키는 입시 정보 위키를 담당합니다.</p>
@@ -503,8 +445,9 @@ footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line);
               <a href="https://scorewiki.vercel.app" target="_blank" rel="noopener">scorewiki.vercel.app ↗</a>
             </span>
           </div>
-        </div>
-        <div class="card reveal">
+        </article>
+        <article class="bento-card c-certa reveal">
+          <span class="idx">02</span>
           <span class="tag">New · Cert Platform</span>
           <h3>Certa</h3>
           <p>자격증 108종의 응시료·준비기간·합격률을 한눈에 비교하고, 맞춤 추천부터 기출 유형 문제풀이·커뮤니티까지 제공하는 자격증 준비 플랫폼.</p>
@@ -512,8 +455,9 @@ footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line);
             <span class="metric"><b>108종</b> 자격증 · <b>300+</b> 연습문항</span>
             <span class="links"><a href="https://certa-theta.vercel.app" target="_blank" rel="noopener">certa-theta.vercel.app ↗</a></span>
           </div>
-        </div>
-        <div class="card reveal">
+        </article>
+        <article class="bento-card c-kkeul reveal">
+          <span class="idx">03</span>
           <span class="tag">Matching Service</span>
           <h3>Kkeul (끌)</h3>
           <p>공모전·대회를 찾는 사람과 기회를 연결해 주는 매칭 서비스. 흩어져 있는 대회 정보를 한곳에 모아 참가까지 이어줍니다.</p>
@@ -521,85 +465,91 @@ footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line);
             <span class="metric">공모전 × 참가자 <b>매칭 플랫폼</b></span>
             <span class="links"><a href="https://kkeul.vercel.app" target="_blank" rel="noopener">kkeul.vercel.app ↗</a></span>
           </div>
-        </div>
-        <div class="card reveal">
+        </article>
+        <article class="bento-card c-ad reveal">
+          <span class="idx">04</span>
           <span class="tag">Ad Marketplace</span>
           <h3>1,000원 광고판</h3>
           <p>소상공인을 타겟으로 한 광고 슬롯 마케팅 플랫폼. 부담 없는 가격으로 광고 지면을 판매하는 실험적 비즈니스 모델입니다.</p>
           <div class="foot">
             <span class="metric">런칭 4일 만에 매출 <b>260,000원</b></span>
           </div>
-        </div>
-        <div class="card reveal">
+        </article>
+        <article class="bento-card c-grid reveal">
+          <span class="idx">05</span>
           <span class="tag">Mobile Game</span>
           <h3>Grid Shift</h3>
           <p>직접 개발한 슬라이드 퍼즐 게임. Google Play 스토어에서 베타 테스트를 진행하며 모바일 배포 경험을 쌓았습니다.</p>
           <div class="foot">
             <span class="metric">Google Play <b>베타 테스트</b></span>
           </div>
-        </div>
+        </article>
       </div>
       <div class="biz-note reveal">
         <span class="txt"><b>WJedulab</b> — 2026년 초 공식 설립한 에듀테크 스타트업. 대표로서 트래픽과 수익을 만드는 서비스를 지속 런칭 중이며, <b>Privacy News</b>에 인터뷰 "AI로 에듀테크 생태계를 혁신하다"가 보도되었습니다.</span>
         <a href="https://privacynews.kr/s/394679" target="_blank" rel="noopener">기사 읽기 ↗</a>
       </div>
     </section>
-
-    <!-- AWARDS -->
+    <!-- AWARDS : real vertical timeline -->
     <section id="awards">
       <div class="sec-head reveal">
-        <p class="eyebrow">Awards &amp; History</p>
-        <h2>수상 기록 및 주요 이력</h2>
+        <div class="head-txt">
+          <p class="eyebrow">Awards &amp; History</p>
+          <h2>수상 기록 및 주요 이력</h2>
+        </div>
       </div>
-
-      <div class="year-block reveal">
-        <div class="year">2026</div>
-        <ul class="awards">
-          <li><span class="dot"></span><span><span class="t">제43회 한국정보올림피아드(KOI) 1차대회 동상</span></span></li>
-          <li><span class="dot"></span><span><span class="t">제43회 한국정보올림피아드(KOI) 2차대회 장려상</span></span></li>
-          <li><span class="dot"></span><span><span class="t">충남 코딩 도대회 금상</span></span></li>
-          <li><span class="dot"></span><span><span class="t">전국 중학생 창업아이디어 경진대회 결선 진출</span></span></li>
-        </ul>
-      </div>
-
-      <div class="year-block reveal">
-        <div class="year">2025</div>
-        <ul class="awards">
-          <li><span class="dot"></span><span><span class="t">충남 코딩 도대회 1위</span></span></li>
-          <li><span class="dot"></span><span><span class="t">AI 코딩 창의 대회 1위</span><span class="d">교내 대회</span></span></li>
-        </ul>
-      </div>
-
-      <div class="year-block reveal">
-        <div class="year">+<small>기타 주요 이력</small></div>
-        <ul class="awards">
-          <li><span class="dot"></span><span><span class="t">제10회 넥슨 청소년 프로그래밍 챌린지(NYPC) 2라운드 진출</span></span></li>
-          <li><span class="dot"></span><span><span class="t">제4회 AI 로봇 해커톤 참여</span></span></li>
-          <li><span class="dot"></span><span><span class="t">영재교육원 총 9년 이수</span><span class="d">순천향대 영재교육원 5년 → AI·SW 영재원 3년 → 과학영재교육원 1년</span></span></li>
-        </ul>
+      <div class="timeline">
+        <div class="tl-year reveal">
+          <div class="tl-node"><span class="yr">2026</span><span class="dot"></span></div>
+          <div class="tl-cards">
+            <div class="tl-card"><span class="t">제43회 한국정보올림피아드(KOI) 1차대회 동상</span></div>
+            <div class="tl-card"><span class="t">제43회 한국정보올림피아드(KOI) 2차대회 장려상</span></div>
+            <div class="tl-card"><span class="t">충남 코딩 도대회 금상</span></div>
+            <div class="tl-card"><span class="t">전국 중학생 창업아이디어 경진대회 결선 진출</span></div>
+          </div>
+        </div>
+        <div class="tl-year reveal">
+          <div class="tl-node"><span class="yr">2025</span><span class="dot"></span></div>
+          <div class="tl-cards">
+            <div class="tl-card"><span class="t">충남 코딩 도대회 1위</span></div>
+            <div class="tl-card"><span class="t">AI 코딩 창의 대회 1위</span><span class="d">교내 대회</span></div>
+          </div>
+        </div>
+        <div class="tl-year other reveal">
+          <div class="tl-node"><span class="yr mixed">기타 주요<br>이력</span><span class="dot"></span></div>
+          <div class="tl-cards">
+            <div class="tl-card"><span class="t">제10회 넥슨 청소년 프로그래밍 챌린지(NYPC) 2라운드 진출</span></div>
+            <div class="tl-card"><span class="t">제4회 AI 로봇 해커톤 참여</span></div>
+            <div class="tl-card"><span class="t">영재교육원 총 9년 이수</span><span class="d">순천향대 영재교육원 5년 → AI·SW 영재원 3년 → 과학영재교육원 1년</span></div>
+          </div>
+        </div>
       </div>
     </section>
-
     <!-- CERTIFICATIONS -->
     <section id="certs">
       <div class="sec-head reveal">
-        <p class="eyebrow">Certifications</p>
-        <h2>자격증 및 인증</h2>
+        <div class="head-txt">
+          <p class="eyebrow">Certifications</p>
+          <h2>자격증 및 인증</h2>
+        </div>
       </div>
       <div class="certs">
         <div class="cert reveal">
+          <span class="avatar">GA</span>
           <div class="issuer">Google</div>
           <h3>Google Analytics 4 (GA4)</h3>
           <p>웹 트래픽 분석과 데이터 기반 의사결정 역량 인증.</p>
           <span class="badge">공식 인증</span>
         </div>
         <div class="cert reveal">
+          <span class="avatar">PM</span>
           <div class="issuer">PMI</div>
           <h3>PMI Kickoff</h3>
           <p>프로젝트 관리 기초 과정 수료.</p>
           <span class="badge">수료</span>
         </div>
         <div class="cert reveal">
+          <span class="avatar">PR</span>
           <div class="issuer">PMI</div>
           <h3>Project Management Ready</h3>
           <p>프로젝트 관리 입문 자격 — PMI 기초 자격증.</p>
@@ -607,60 +557,63 @@ footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line);
         </div>
       </div>
     </section>
-
     <!-- TECH STACK -->
     <section id="stack">
       <div class="sec-head reveal">
-        <p class="eyebrow">Tech Stack</p>
-        <h2>기술 스택</h2>
+        <div class="head-txt">
+          <p class="eyebrow">Tech Stack</p>
+          <h2>기술 스택</h2>
+        </div>
       </div>
-      <div class="reveal">
-        <div class="stack-row">
-          <div class="cat">Languages</div>
+      <div class="stack-grid reveal">
+        <div class="stack-block">
+          <span class="cat">Languages</span>
           <div class="chips"><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">C / C++</span></div>
         </div>
-        <div class="stack-row">
-          <div class="cat">Frontend</div>
+        <div class="stack-block">
+          <span class="cat">Frontend</span>
           <div class="chips"><span class="chip">React</span><span class="chip">Next.js</span></div>
         </div>
-        <div class="stack-row">
-          <div class="cat">Backend · Infra</div>
+        <div class="stack-block">
+          <span class="cat">Backend · Infra</span>
           <div class="chips"><span class="chip">Supabase <small>— RLS 정책 관리</small></span><span class="chip">Vercel</span><span class="chip">Capacitor</span></div>
         </div>
-        <div class="stack-row">
-          <div class="cat">AI · Method</div>
+        <div class="stack-block">
+          <span class="cat">AI · Method</span>
           <div class="chips"><span class="chip hl">Vibe Coding</span><span class="chip">Cursor</span><span class="chip">Claude</span></div>
         </div>
-        <div class="stack-row">
-          <div class="cat">Marketing</div>
+        <div class="stack-block">
+          <span class="cat">Marketing</span>
           <div class="chips"><span class="chip">Google Search Console</span><span class="chip">Kakao AdFit</span><span class="chip">Google AdSense</span></div>
         </div>
-        <p class="stack-note">Cursor, Claude 등 AI 툴과 함께 아키텍처를 설계하고 로직을 구현하는 <b>바이브 코딩(Vibe Coding)</b>을 개발 방법론으로 적용하고 있습니다.</p>
       </div>
+      <p class="stack-note reveal">Cursor, Claude 등 AI 툴과 함께 아키텍처를 설계하고 로직을 구현하는 <b>바이브 코딩(Vibe Coding)</b>을 개발 방법론으로 적용하고 있습니다.</p>
     </section>
-
     <!-- NOW -->
     <section id="now">
       <div class="sec-head reveal">
-        <p class="eyebrow">Now</p>
-        <h2>지금 하고 있는 것</h2>
+        <div class="head-txt">
+          <p class="eyebrow">Now</p>
+          <h2>지금 하고 있는 것</h2>
+        </div>
       </div>
       <ul class="now-list reveal">
-        <li><span class="arrow">→</span><span><b>비즈니스 피칭 멘토링</b> 수강 — 투자·발표 역량 확장</span></li>
-        <li><span class="arrow">→</span><span><b>오픈소스 개발자 대회</b> 참여 — 활동 범위를 오픈소스 생태계로 확장</span></li>
-        <li><span class="arrow">→</span><span><b>코드게이트 해커톤</b> 참여</span></li>
-        <li><span class="arrow">→</span><span><b>각종 공모전</b> 참가 — 아이디어를 실전에서 검증</span></li>
-        <li><span class="arrow">→</span><span><b>WJedulab 서비스</b> 지속 런칭 및 그로스 실험</span></li>
+        <li><span class="n">1</span><span><b>비즈니스 피칭 멘토링</b> 수강 — 투자·발표 역량 확장</span></li>
+        <li><span class="n">2</span><span><b>오픈소스 개발자 대회</b> 참여 — 활동 범위를 오픈소스 생태계로 확장</span></li>
+        <li><span class="n">3</span><span><b>코드게이트 해커톤</b> 참여</span></li>
+        <li><span class="n">4</span><span><b>각종 공모전</b> 참가 — 아이디어를 실전에서 검증</span></li>
+        <li><span class="n">5</span><span><b>WJedulab 서비스</b> 지속 런칭 및 그로스 실험</span></li>
       </ul>
     </section>
-
   </div>
-
   <!-- FOOTER -->
-  <footer id="contact">
+  <footer id="contact" class="cta-footer">
     <div class="wrap footer-inner">
       <p class="footer-cta">함께 만들고 싶은 것이 있다면,<br>언제든 편하게 연락 주세요.</p>
-      <a class="btn btn-primary" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener">Instagram @WJedulab_archive</a>
+      <div class="footer-contacts">
+        <a class="btn btn-invert" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener">Instagram @WJedulab_archive</a>
+        <a class="btn btn-ghost" style="border-color:color-mix(in srgb, var(--accent-on) 35%, transparent); color:var(--accent-on); background:transparent;" href="mailto:woojin052501@gmail.com">woojin052501@gmail.com</a>
+      </div>
       <div class="footer-row">
         <span>© 2026 우진 (wxvujn_) · WJedulab</span>
         <span class="mono">wxvujn_</span>
@@ -668,7 +621,6 @@ footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line);
     </div>
   </footer>
 </main>
-
 <script>
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -684,7 +636,22 @@ footer { margin-top: clamp(64px, 10vw, 96px); border-top: 1px solid var(--line);
   }, { threshold: 0.1 });
   els.forEach(function (el) { io.observe(el); });
 })();
+(function () {
+  var links = document.querySelectorAll('nav.top a[href^="#"]');
+  var sections = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  if (!("IntersectionObserver" in window) || !sections.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var link = document.querySelector('nav.top a[href="#' + entry.target.id + '"]');
+      if (!link) return;
+      if (entry.isIntersecting) {
+        links.forEach(function (l) { l.classList.remove("active"); });
+        link.classList.add("active");
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  sections.forEach(function (s) { io.observe(s); });
+})();
 </script>
-
 </body>
 </html>
