@@ -293,6 +293,19 @@ section { padding: clamp(56px, 9vw, 84px) 0 0; scroll-margin-top: 76px; }
 @media (prefers-reduced-motion: reduce) { .tl-card:hover { transform: none; } }
 .tl-card .t { font-weight: 650; font-size: 15.5px; color: var(--ink); }
 .tl-card .d { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+.tl-card.highlight {
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface) 65%);
+  border-left-width: 4px;
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
+  box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.tl-card.highlight .t { font-weight: 750; }
+.tl-badge {
+  display: inline-flex; align-items: center; gap: 4px; margin-left: 10px; vertical-align: middle;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  color: var(--accent-on); background: var(--accent); border-radius: 999px; padding: 3px 10px 3px 8px;
+}
+.tl-badge::before { content: "\2605"; font-size: 10px; }
 @media (max-width: 560px) {
   .tl-year { grid-template-columns: 1fr; row-gap: 12px; }
   .tl-year::before { left: 5px; top: 54px; }
@@ -505,7 +518,7 @@ footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accen
             <div class="tl-card"><span class="t">제43회 한국정보올림피아드(KOI) 1차대회 동상</span></div>
             <div class="tl-card"><span class="t">제43회 한국정보올림피아드(KOI) 2차대회 장려상</span></div>
             <div class="tl-card"><span class="t">충남 코딩 도대회 금상</span></div>
-            <div class="tl-card"><span class="t">전국 중학생 창업아이디어 경진대회 결선 진출</span></div>
+            <div class="tl-card highlight"><span class="t">전국 중학생 창업아이디어 경진대회 결선 진출<span class="tl-badge">TOP 15</span></span><span class="d">전국 참가팀 중 결선 진출 15팀 선발</span></div>
           </div>
         </div>
         <div class="tl-year reveal">
