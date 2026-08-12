@@ -395,6 +395,17 @@ section { padding: clamp(56px, 9vw, 84px) 0 0; scroll-margin-top: 76px; }
 }
 @media (prefers-reduced-motion: reduce) { .tl-badge::after { display: none; } }
 .tl-badge::before { content: "\2605"; font-size: 10px; }
+.tl-badge.gold { background: linear-gradient(120deg, #C99A2E, #EBC565); color: #2B2005; }
+.tl-badge.gold::before { content: "\1F3C6"; font-size: 11px; }
+.tl-card.highlight.gold {
+  background: linear-gradient(135deg, color-mix(in srgb, #EBC565 24%, var(--surface)), var(--surface) 65%);
+  border-color: color-mix(in srgb, #C99A2E 45%, var(--line));
+  box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, #C99A2E 22%, transparent);
+}
+.tl-date {
+  font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; color: var(--muted);
+  margin-right: 9px; font-variant-numeric: tabular-nums;
+}
 @media (max-width: 560px) {
   .tl-year { grid-template-columns: 1fr; row-gap: 12px; }
   .tl-year::before { left: 5px; top: 54px; }
@@ -606,16 +617,18 @@ footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accen
         <div class="tl-year current reveal">
           <div class="tl-node"><span class="yr">2026</span><span class="dot"></span></div>
           <div class="tl-cards">
-            <div class="tl-card"><span class="t">제43회 한국정보올림피아드(KOI) 1차대회 동상</span></div>
-            <div class="tl-card"><span class="t">제43회 한국정보올림피아드(KOI) 2차대회 장려상</span></div>
-            <div class="tl-card"><span class="t">충남 코딩 도대회 금상</span></div>
-            <div class="tl-card highlight"><span class="t">전국 중학생 창업아이디어 경진대회 결선 진출<span class="tl-badge">TOP 15</span></span><span class="d">전국 참가팀 중 결선 진출 15팀 선발</span></div>
+            <div class="tl-card highlight gold"><span class="t"><span class="tl-date">2026.08</span>2026 전국 중학생 창업아이디어 경진대회 금상<span class="tl-badge gold">전국 1위</span></span><span class="d">전국 결선 15팀 중 금상(전국 1위) 수상</span></div>
+            <div class="tl-card"><span class="t"><span class="tl-date">2026.07</span>AtCoder Regular Contest 224</span><span class="d">한국 21위</span></div>
+            <div class="tl-card"><span class="t"><span class="tl-date">2026.07</span>제43회 한국정보올림피아드(KOI) 본선 장려상</span></div>
+            <div class="tl-card highlight"><span class="t"><span class="tl-date">2026.07</span>2026 전국 중학생 창업아이디어 경진대회 본선 진출<span class="tl-badge">TOP 15</span></span><span class="d">전국 참가팀 중 본선 진출 15팀 선발</span></div>
+            <div class="tl-card"><span class="t"><span class="tl-date">2026.06</span>제43회 한국정보올림피아드(KOI) 1차대회 동상</span></div>
+            <div class="tl-card"><span class="t"><span class="tl-date">2026.05</span>충청남도 코딩 한마당 금상</span></div>
           </div>
         </div>
         <div class="tl-year reveal">
           <div class="tl-node"><span class="yr">2025</span><span class="dot"></span></div>
           <div class="tl-cards">
-            <div class="tl-card"><span class="t">충남 코딩 도대회 1위</span></div>
+            <div class="tl-card"><span class="t"><span class="tl-date">2025.05</span>충청남도 코딩 한마당 중1부문 1위</span></div>
             <div class="tl-card"><span class="t">AI 코딩 창의 대회 1위</span><span class="d">교내 대회</span></div>
           </div>
         </div>
@@ -658,6 +671,20 @@ footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accen
           <h3>Project Management Ready</h3>
           <p>프로젝트 관리 입문 자격 — PMI 기초 자격증.</p>
           <span class="badge">기초 자격증</span>
+        </div>
+        <div class="cert reveal">
+          <span class="avatar">FA</span>
+          <div class="issuer">PMI · 2026.07</div>
+          <h3>Fundamentals of Agile Project Management</h3>
+          <p>애자일 방법론 기반 프로젝트 관리 기초 과정 수료.</p>
+          <span class="badge">수료</span>
+        </div>
+        <div class="cert reveal">
+          <span class="avatar">FP</span>
+          <div class="issuer">PMI · 2026.07</div>
+          <h3>Fundamentals of Predictive Project Management</h3>
+          <p>예측형(전통적) 프로젝트 관리 기초 과정 수료.</p>
+          <span class="badge">수료</span>
         </div>
       </div>
     </section>
