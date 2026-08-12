@@ -7,8 +7,12 @@
 <meta property="og:description" content="만들고, 세상에 내보내고, 숫자로 증명합니다. 에듀테크 스타트업 WJedulab 대표 우진의 포트폴리오.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C2F63%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22>⚡</text></svg>">
 <title>우진 (wxvujn_) — Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C1428" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
 <style>
 @font-face {
   font-family: "Pretendard Variable";
@@ -75,6 +79,7 @@
 }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { overflow-x: hidden; }
 body {
   margin: 0;
   background: var(--bg);
@@ -84,6 +89,11 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+.bento-card .links a, .stat-card .num, .cert .issuer, .footer-row .mono {
+  overflow-wrap: anywhere;
 }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
 a { color: var(--accent); text-decoration: none; }
@@ -117,10 +127,37 @@ nav.top a { font-size: 13px; color: var(--muted); font-weight: 600; padding: 8px
 nav.top a:hover { color: var(--ink); text-decoration: none; }
 nav.top a.active { background: var(--surface); color: var(--accent); box-shadow: var(--shadow); }
 .header-cta { flex: none; }
+.menu-btn {
+  display: none; flex: none; align-items: center; justify-content: center;
+  width: 40px; height: 40px; padding: 0; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--surface); cursor: pointer;
+}
+.menu-btn:hover { border-color: var(--accent); }
+.menu-icon { position: relative; width: 18px; height: 12px; }
+.menu-icon span {
+  position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: var(--ink);
+  transition: transform .22s ease, opacity .22s ease, top .22s ease;
+}
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 5px; }
+.menu-icon span:nth-child(3) { top: 10px; }
+.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+.mobile-nav-wrap { display: none; border-top: 1px solid var(--line); }
+.mobile-nav-wrap.open { display: block; }
+.mobile-nav { display: flex; flex-direction: column; padding: 10px 0 16px; gap: 2px; }
+.mobile-nav a { padding: 12px 6px; border-radius: 10px; font-size: 15px; font-weight: 600; color: var(--ink); }
+.mobile-nav a:hover { background: var(--ghost); text-decoration: none; }
+.mobile-nav .divider { height: 1px; background: var(--line); margin: 6px 0; }
+.mobile-nav a.ext { color: var(--accent); font-family: var(--font-mono); font-size: 13.5px; }
 @media (max-width: 700px) {
   nav.top { display: none; }
   .header-cta .label { display: none; }
+  .header-cta { padding-left: 13px; padding-right: 13px; }
+  .menu-btn { display: inline-flex; }
 }
+@media (min-width: 701px) { .mobile-nav-wrap { display: none !important; } }
 /* ---------- buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -167,6 +204,11 @@ nav.top a.active { background: var(--surface); color: var(--accent); box-shadow:
   filter: blur(10px);
 }
 @media (max-width: 860px) { .hero-split { grid-template-columns: 1fr; } }
+@media (max-width: 700px) {
+  .hero-split::before, .hero-split::after { width: 80%; filter: blur(6px); }
+  .hero-split::before { left: -6%; top: -6%; }
+  .hero-split::after { right: -14%; }
+}
 .status-pill {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--muted);
@@ -239,6 +281,7 @@ nav.top a.active { background: var(--surface); color: var(--accent); box-shadow:
 .stat-card .num small { font-size: .55em; font-weight: 700; }
 .stat-card .lbl { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
 @media (max-width: 480px) { .hero-stats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .hero-stats { grid-template-columns: 1fr; } }
 /* ---------- sections ---------- */
 section { padding: clamp(56px, 9vw, 84px) 0 0; scroll-margin-top: 76px; }
 .sec-head {
@@ -499,7 +542,21 @@ footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accen
       <a href="#certs">자격증</a>
       <a href="#stack">테크 스택</a>
     </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNavWrap" aria-label="메뉴 열기">
+      <span class="menu-icon"><span></span><span></span><span></span></span>
+    </button>
     <a class="btn btn-primary btn-sm header-cta" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener"><span class="label">Instagram</span> ↗</a>
+  </div>
+  <div class="mobile-nav-wrap" id="mobileNavWrap">
+    <nav class="wrap mobile-nav" aria-label="모바일 메뉴">
+      <a href="#projects">프로젝트</a>
+      <a href="#awards">수상 기록</a>
+      <a href="#certs">자격증</a>
+      <a href="#stack">테크 스택</a>
+      <span class="divider"></span>
+      <a class="ext" href="https://instagram.com/WJedulab_archive" target="_blank" rel="noopener">Instagram @WJedulab_archive ↗</a>
+      <a class="ext" href="mailto:woojin052501@gmail.com">woojin052501@gmail.com</a>
+    </nav>
   </div>
 </header>
 <main id="main">
@@ -805,6 +862,29 @@ footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accen
       card.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
       card.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100) + "%");
     });
+  });
+})();
+(function () {
+  var btn = document.getElementById("menuBtn");
+  var panel = document.getElementById("mobileNavWrap");
+  if (!btn || !panel) return;
+  function closeMenu() {
+    panel.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  }
+  function toggleMenu() {
+    var isOpen = panel.classList.toggle("open");
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+  btn.addEventListener("click", toggleMenu);
+  panel.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", closeMenu);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeMenu();
+  });
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 700) closeMenu();
   });
 })();
 </script>
