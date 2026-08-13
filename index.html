@@ -282,6 +282,7 @@ nav.top a.active { background: var(--surface); color: var(--accent); box-shadow:
 .stat-card .lbl { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
 @media (max-width: 480px) { .hero-stats { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 400px) { .hero-stats { grid-template-columns: 1fr; } }
+.stat-card.wide { grid-column: 1 / -1; }
 /* ---------- sections ---------- */
 section { padding: clamp(56px, 9vw, 84px) 0 0; scroll-margin-top: 76px; }
 .sec-head {
@@ -584,13 +585,9 @@ footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accen
           <div class="num">26<small>만 원</small></div>
           <div class="lbl">'1,000원 광고판' 런칭 4일 만의 매출</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-card wide">
           <div class="num">KOI <small>2입상</small></div>
           <div class="lbl">제43회 한국정보올림피아드 수상</div>
-        </div>
-        <div class="stat-card">
-          <div class="num"><small>IQ </small>136</div>
-          <div class="lbl">지능지수 — 영재교육원 총 9년 이수</div>
         </div>
       </div>
     </section>
@@ -687,14 +684,6 @@ footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accen
           <div class="tl-cards">
             <div class="tl-card"><span class="t"><span class="tl-date">2025.05</span>충청남도 코딩 한마당 중1부문 1위</span></div>
             <div class="tl-card"><span class="t">AI 코딩 창의 대회 1위</span><span class="d">교내 대회</span></div>
-          </div>
-        </div>
-        <div class="tl-year other reveal">
-          <div class="tl-node"><span class="yr mixed">기타 주요<br>이력</span><span class="dot"></span></div>
-          <div class="tl-cards">
-            <div class="tl-card"><span class="t">제10회 넥슨 청소년 프로그래밍 챌린지(NYPC) 2라운드 진출</span></div>
-            <div class="tl-card"><span class="t">제4회 AI 로봇 해커톤 참여</span></div>
-            <div class="tl-card"><span class="t">영재교육원 총 9년 이수</span><span class="d">순천향대 영재교육원 5년 → AI·SW 영재원 3년 → 과학영재교육원 1년</span></div>
           </div>
         </div>
       </div>
