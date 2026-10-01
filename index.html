@@ -115,7 +115,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 /* ================= hero ================= */
 .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; padding-top: 110px; overflow: hidden; }
-.hero-top { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 5vw, 64px); align-items: center; position: relative; flex: 1; }
+.hero-top { width: 100%; display: flex; flex-direction: column; justify-content: center; position: relative; flex: 1; padding-bottom: clamp(48px, 8vw, 96px); }
 .hero h1 {
   font-family: var(--font-display); font-weight: 800; margin: 0;
   font-size: clamp(40px, 7.4vw, 96px); line-height: 1.02; letter-spacing: -.035em;
@@ -138,37 +138,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .btn:hover .arr { transform: translate(3px, -3px); }
 @media (max-width: 520px) { .actions .btn { flex: 1 1 100%; } }
 
-/* 3D tilt business card */
-.card-stage { perspective: 1100px; display: flex; justify-content: center; padding: 10px 0; }
-.bizcard {
-  --rx: 0deg; --ry: 0deg;
-  position: relative; width: min(100%, 440px); aspect-ratio: 1.72 / 1; border-radius: 22px;
-  padding: clamp(20px, 3.4vw, 30px); color: #F4F4F0; overflow: hidden;
-  background:
-    radial-gradient(120% 140% at 0% 0%, #3A3B40 0%, #16171A 45%, #050506 100%);
-  box-shadow: 0 50px 80px -30px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.08) inset;
-  transform: rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(-6deg);
-  transform-style: preserve-3d; transition: transform .6s var(--ease);
-  display: flex; flex-direction: column;
-}
-.bizcard.live { transition: transform .08s linear; }
-.bizcard::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(400px circle at var(--gx, 30%) var(--gy, 20%), rgba(255,255,255,.16), transparent 45%);
-}
-.bizcard .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-.bizcard .b { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: .02em; }
-.bizcard .tag { font-size: 12px; color: rgba(244,244,240,.62); margin-top: 2px; line-height: 1.5; }
-.bizcard .side { font-size: 11px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 3px 10px; color: rgba(244,244,240,.8); flex: none; }
-.bizcard .bottom { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
-.bizcard .role { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: #D4FF3A; }
-.bizcard .name { font-size: clamp(24px, 4vw, 32px); font-weight: 800; letter-spacing: .04em; line-height: 1.1; margin-top: 4px; }
-.bizcard .nfc { width: 26px; height: 26px; opacity: .6; flex: none; }
-@media (max-width: 900px) {
-  .hero-top { grid-template-columns: 1fr; }
-  .card-stage { order: -1; padding-top: 6px; }
-  .bizcard { width: min(100%, 360px); }
-}
 
 .marquee { border-block: 1px solid var(--line); overflow: hidden; background: var(--bg-2); }
 .marquee .track { display: flex; width: max-content; animation: slide 38s linear infinite; }
@@ -385,26 +354,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
         <div class="actions rv">
           <a class="btn solid" href="#work">서비스 보기 <span class="arr">↗</span></a>
           <a class="btn" href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">디지털 명함 <span class="arr">↗</span></a>
-        </div>
-      </div>
-      <div class="rv">
-        <div class="card-stage">
-          <div class="bizcard" id="bizcard" aria-label="Telosix 명함, CEO &amp; Founder 염우진">
-            <div class="top">
-              <div>
-                <div class="b">Telosix</div>
-                <div class="tag">디미고 진학을 꿈꾸는 중학생 창업가 겸 웹 개발자</div>
-              </div>
-              <span class="side">앞면</span>
-            </div>
-            <div class="bottom">
-              <div>
-                <div class="role">CEO &amp; Founder</div>
-                <div class="name">염우진</div>
-              </div>
-              <svg class="nfc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8.5 7.5a6 6 0 0 1 0 9"/><path d="M12 5a9.5 9.5 0 0 1 0 14"/><path d="M15.5 2.5a13 13 0 0 1 0 19"/><path d="M5 10a2.5 2.5 0 0 1 0 4"/></svg>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -660,24 +609,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   drawer.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
   window.addEventListener("resize", function () { if (window.innerWidth > 860) setMenu(false); });
-
-  // 3D card tilt
-  var card = document.getElementById("bizcard");
-  if (card && !reduced && window.matchMedia("(hover: hover)").matches) {
-    card.addEventListener("mousemove", function (e) {
-      var r = card.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-      card.classList.add("live");
-      card.style.setProperty("--ry", ((x - .5) * 22) + "deg");
-      card.style.setProperty("--rx", ((.5 - y) * 18) + "deg");
-      card.style.setProperty("--gx", (x * 100) + "%");
-      card.style.setProperty("--gy", (y * 100) + "%");
-    });
-    card.addEventListener("mouseleave", function () {
-      card.classList.remove("live");
-      card.style.setProperty("--rx", "0deg"); card.style.setProperty("--ry", "0deg");
-    });
-  }
 
   // theme toggle (per-viewer preference)
   var root = document.documentElement, btn = document.getElementById("themeBtn");
