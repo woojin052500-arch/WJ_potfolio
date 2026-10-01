@@ -2,17 +2,15 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>염우진 · Telosix</title>
 <meta name="description" content="Telosix CEO &amp; Founder 염우진의 포트폴리오 — 디미고 진학을 꿈꾸는 중학생 창업가 겸 웹 개발자. 서비스, 수상경력, 자격증, 기술 스택, 외주 문의">
-<meta property="og:title" content="염우진 · Telosix CEO &amp; Founder — Portfolio">
+<meta property="og:title" content="염우진 · Telosix CEO &amp; Founder">
 <meta property="og:description" content="아이디어를 현실로 만드는 학생 IT 기업 Telosix. 대표 염우진의 포트폴리오.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23111318%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22>⚡</text></svg>">
-<title>염우진 · Telosix</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#EEF3FA" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
-<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%230A0A0B%22/><text x=%2250%22 y=%2270%22 font-family=%22Arial%22 font-weight=%22900%22 font-size=%2262%22 text-anchor=%22middle%22 fill=%22%23D4FF3A%22>T</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230A0A0B%22/><text x=%2250%22 y=%2270%22 font-family=%22Arial%22 font-weight=%22900%22 font-size=%2262%22 text-anchor=%22middle%22 fill=%22%23D4FF3A%22>T</text></svg>">
+<meta name="theme-color" content="#0A0A0B">
 <style>
 @font-face {
   font-family: "Pretendard Variable";
@@ -30,992 +28,721 @@
   unicode-range: U+0000-00FF, U+2013-2014, U+2018-2019, U+201C-201D;
 }
 
-/* ---------- tokens : Tapple-style — pale blue ground, black card & ink ---------- */
+
+/* ================= tokens : dark studio (default) ================= */
 :root {
-  --bg: #EEF3FA;
-  --surface: #FFFFFF;
-  --ink: #111318;
-  --muted: #5B6271;
-  --line: #E1E6EF;
-  --accent: #111318;
-  --accent-soft: #EEF1F6;
-  --accent-on: #FFFFFF;
-  --ghost: #F3F6FB;
-  --card-a: #2A2D33;
-  --card-b: #0B0C0F;
-  --shadow: 0 1px 2px rgba(17, 19, 24, .04), 0 8px 24px -12px rgba(17, 19, 24, .12);
-  --shadow-lg: 0 4px 8px rgba(17, 19, 24, .05), 0 24px 48px -16px rgba(17, 19, 24, .2);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0B0D12; --surface: #151820; --ink: #EDEFF4; --muted: #9AA1B2; --line: #252A35;
-    --accent: #EDEFF4; --accent-soft: #1E222C; --accent-on: #0B0D12; --ghost: #12151C;
-    --card-a: #34373F; --card-b: #0E0F13;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-    --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0B0D12; --surface: #151820; --ink: #EDEFF4; --muted: #9AA1B2; --line: #252A35;
-  --accent: #EDEFF4; --accent-soft: #1E222C; --accent-on: #0B0D12; --ghost: #12151C;
-  --card-a: #34373F; --card-b: #0E0F13;
-  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-  --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
-}
-* { box-sizing: border-box; }
-:root {
-  --font-display: "Outfit", "Pretendard Variable", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --bg: #0A0A0B;
+  --bg-2: #111113;
+  --surface: #151517;
+  --ink: #F2F1EC;
+  --muted: #8E8D88;
+  --line: #26262A;
+  --accent: #D4FF3A;
+  --accent-ink: #0A0A0B;
+  --gold: #E8C063;
+  --font-display: "Outfit", "Pretendard Variable", "Apple SD Gothic Neo", sans-serif;
   --font-body: "Pretendard Variable", -apple-system, "Apple SD Gothic Neo", "Segoe UI", "Malgun Gothic", sans-serif;
-  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+  --pad: clamp(16px, 4vw, 40px);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  color-scheme: dark;
 }
-html { scroll-behavior: smooth; }
+:root[data-theme="light"] {
+  --bg: #F3F1EA; --bg-2: #ECE9E0; --surface: #FFFFFF; --ink: #0E0E10; --muted: #6A6862; --line: #DAD6CB;
+  --accent: #0E0E10; --accent-ink: #D4FF3A; --gold: #A9801F;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-html { overflow-x: hidden; }
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  word-break: keep-all;
-  overflow-x: hidden;
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.7;
+  -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
 }
-.bento-card .links a, .stat-card .num, .cert .issuer, .footer-row .mono {
-  overflow-wrap: anywhere;
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+::selection { background: #D4FF3A; color: #0A0A0B; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--pad); }
+.mono { font-family: var(--font-mono); }
+.skip { position: absolute; left: -999px; top: 0; z-index: 100; background: var(--ink); color: var(--bg); padding: 10px 16px; font-weight: 700; }
+.skip:focus { left: 0; }
+/* subtle grain */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; text-underline-offset: 3px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-.skip-link {
-  position: absolute; left: -999px; top: 0; z-index: 100;
-  background: var(--accent); color: var(--accent-on);
-  padding: 10px 16px; border-radius: 0 0 8px 0; font-size: 13px; font-weight: 600;
+
+/* ================= header ================= */
+.hdr {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  transition: background .3s ease, border-color .3s ease;
+  border-bottom: 1px solid transparent;
 }
-.skip-link:focus { left: 0; }
-.display { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; }
-/* ---------- scroll progress ---------- */
-.scroll-progress {
-  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 40%, var(--ink)));
-  z-index: 50; transition: width .08s linear;
+.hdr.scrolled { background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
+.hdr .row { display: flex; align-items: center; gap: 24px; height: 68px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: .16em; }
+.brand .mark {
+  width: 28px; height: 28px; border-radius: 8px; background: #D4FF3A; color: #0A0A0B;
+  display: grid; place-items: center; font-size: 15px; letter-spacing: 0;
 }
-/* ---------- header ---------- */
-header.site-header {
-  border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 86%, transparent);
-  backdrop-filter: blur(8px);
-  position: sticky; top: 0; z-index: 10;
+.nav { display: flex; gap: 4px; margin-left: auto; }
+.nav a { font-size: 14px; font-weight: 600; color: var(--muted); padding: 8px 14px; border-radius: 999px; transition: color .2s; }
+.nav a:hover, .nav a.active { color: var(--ink); }
+.nav a.active { background: var(--surface); }
+.cta-pill {
+  display: inline-flex; align-items: center; gap: 8px; flex: none;
+  background: #D4FF3A; color: #0A0A0B; font-weight: 700; font-size: 14px;
+  padding: 10px 18px; border-radius: 999px; transition: transform .2s var(--ease);
 }
-.header-row { display: flex; align-items: center; justify-content: space-between; min-height: 58px; gap: 16px; }
-.logo { font-family: var(--font-display); font-size: 19px; font-weight: 800; color: var(--ink); letter-spacing: .14em; padding: 12px 0; flex: none; }
-.logo:hover { text-decoration: none; color: var(--accent); }
-nav.top { display: flex; gap: 2px; background: var(--ghost); border-radius: 999px; padding: 4px; }
-nav.top a { font-size: 13px; color: var(--muted); font-weight: 600; padding: 8px 14px; border-radius: 999px; }
-nav.top a:hover { color: var(--ink); text-decoration: none; }
-nav.top a.active { background: var(--surface); color: var(--accent); box-shadow: var(--shadow); }
-.header-cta { flex: none; }
-.menu-btn {
-  display: none; flex: none; align-items: center; justify-content: center;
-  width: 40px; height: 40px; padding: 0; border: 1px solid var(--line); border-radius: 10px;
-  background: var(--surface); cursor: pointer;
-}
-.menu-btn:hover { border-color: var(--accent); }
-.menu-icon { position: relative; width: 18px; height: 12px; }
-.menu-icon span {
-  position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background: var(--ink);
-  transition: transform .22s ease, opacity .22s ease, top .22s ease;
-}
-.menu-icon span:nth-child(1) { top: 0; }
-.menu-icon span:nth-child(2) { top: 5px; }
-.menu-icon span:nth-child(3) { top: 10px; }
-.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(1) { top: 5px; transform: rotate(45deg); }
-.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(2) { opacity: 0; }
-.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
-.mobile-nav-wrap { display: none; border-top: 1px solid var(--line); }
-.mobile-nav-wrap.open { display: block; }
-.mobile-nav { display: flex; flex-direction: column; padding: 10px 0 16px; gap: 2px; }
-.mobile-nav a { padding: 12px 6px; border-radius: 10px; font-size: 15px; font-weight: 600; color: var(--ink); }
-.mobile-nav a:hover { background: var(--ghost); text-decoration: none; }
-.mobile-nav .divider { height: 1px; background: var(--line); margin: 6px 0; }
-.mobile-nav a.ext { color: var(--accent); font-family: var(--font-mono); font-size: 13.5px; }
-@media (max-width: 700px) {
-  nav.top { display: none; }
-  .header-cta .label { display: none; }
-  .header-cta { padding-left: 13px; padding-right: 13px; }
-  .menu-btn { display: inline-flex; margin-left: auto; }
-  .header-row { gap: 10px; }
-}
-@media (min-width: 701px) { .mobile-nav-wrap { display: none !important; } }
-/* ---------- buttons ---------- */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  font-size: 14.5px; font-weight: 600; min-height: 46px; padding: 10px 22px;
-  border-radius: 999px; border: 1px solid transparent; white-space: nowrap;
-}
-.btn:hover { text-decoration: none; }
-.btn-sm { min-height: 38px; padding: 7px 18px; font-size: 13.5px; }
-.btn-primary {
-  background: var(--accent); color: var(--accent-on); position: relative; overflow: hidden;
-}
-.btn-primary::after {
-  content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
-  background: linear-gradient(115deg, transparent, rgba(255,255,255,.35), transparent);
-  transform: skewX(-20deg); transition: left .55s ease;
-}
-.btn-primary:hover { filter: brightness(1.12); }
-.btn-primary:hover::after { left: 130%; }
-@media (prefers-reduced-motion: reduce) { .btn-primary::after { display: none; } }
-.btn-ghost { border-color: var(--line); color: var(--ink); background: var(--surface); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-.btn-invert { background: var(--accent-on); color: var(--accent); }
-.btn-invert:hover { filter: brightness(.96); }
-@media (max-width: 480px) { .hero-actions .btn { flex: 1 1 100%; } }
-/* ---------- hero split ---------- */
-.hero-split {
-  position: relative; isolation: isolate;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: clamp(24px, 5vw, 56px);
-  align-items: center;
-  padding: clamp(48px, 8vw, 80px) 0 clamp(48px, 8vw, 72px);
-}
-.hero-split::before {
-  content: ""; position: absolute; z-index: -1; pointer-events: none;
-  top: -12%; left: -8%; width: 60%; height: 130%;
-  background: radial-gradient(circle, rgba(120, 160, 230, .28) 0%, transparent 68%);
-  filter: blur(10px);
-}
-.hero-split::after {
-  content: ""; position: absolute; z-index: -1; pointer-events: none;
-  top: 10%; right: -10%; width: 45%; height: 90%;
-  background: radial-gradient(circle, rgba(120, 160, 230, .22) 0%, transparent 70%);
-  filter: blur(10px);
-}
-@media (max-width: 860px) { .hero-split { grid-template-columns: 1fr; } }
-@media (max-width: 700px) {
-  .hero-split::before, .hero-split::after { width: 80%; filter: blur(6px); }
-  .hero-split::before { left: -6%; top: -6%; }
-  .hero-split::after { right: -14%; }
-}
-.status-pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--muted);
-  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
-  padding: 6px 14px 6px 10px; margin: 0 0 22px;
-}
-.status-pill .pulse {
-  position: relative; width: 8px; height: 8px; border-radius: 50%; background: #2FBE6B; flex: none;
-}
-.status-pill .pulse::after {
-  content: ""; position: absolute; inset: -4px; border-radius: 50%; background: #2FBE6B;
-  opacity: .55; animation: pulseRing 1.8s ease-out infinite;
-}
-@media (prefers-reduced-motion: reduce) { .status-pill .pulse::after { animation: none; opacity: 0; } }
-@keyframes pulseRing {
-  0% { transform: scale(.4); opacity: .55; }
-  100% { transform: scale(1.8); opacity: 0; }
-}
-.hero-main .eyebrow, .sec-head .eyebrow {
-  position: relative; display: inline-block;
-}
-.hero-main .eyebrow {
-  font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--accent); margin: 0 0 22px; padding-bottom: 10px;
-}
-.hero-main .eyebrow::after, .sec-head .eyebrow::after {
-  content: ""; position: absolute; left: 0; bottom: 0; width: 30px; height: 3px; border-radius: 3px;
-  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 25%, transparent));
-}
-.handle {
-  font-family: var(--font-display); font-weight: 800; font-size: clamp(46px, 9vw, 92px);
-  line-height: .95; letter-spacing: -.035em; margin: 0 0 10px;
-  background: linear-gradient(100deg, var(--ink) 30%, var(--accent) 50%, var(--ink) 70%);
-  background-size: 220% 100%;
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: shimmerText 7s ease-in-out infinite;
-}
-@keyframes shimmerText {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-@media (prefers-reduced-motion: reduce) { .handle { animation: none; background-position: 0% 50%; } }
-.handle .cursor { color: var(--accent); animation: blink 1.1s step-end infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .handle .cursor { animation: none; } }
-.hero-main h1 {
-  font-size: clamp(18px, 2.6vw, 24px); font-weight: 700; margin: 26px 0 14px;
-  letter-spacing: -.01em; line-height: 1.5; text-wrap: balance;
-}
-.hero-main h1 .co { color: var(--accent); }
-.hero-main p.lede { max-width: 32em; color: var(--muted); font-size: 16px; margin: 0 0 30px; }
-.hero-main p.lede b { color: var(--ink); }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-/* ---------- hero stat cards (bento) ---------- */
-.hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-}
-.stat-card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
-  padding: 20px 18px; box-shadow: var(--shadow);
-  border-top: 3px solid var(--accent);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-@media (prefers-reduced-motion: reduce) { .stat-card:hover { transform: none; } }
-.stat-card .num {
-  font-family: var(--font-display); font-weight: 800; font-size: clamp(22px, 3vw, 28px);
-  letter-spacing: -.02em; line-height: 1.1; color: var(--accent); font-variant-numeric: tabular-nums;
-}
-.stat-card .num small { font-size: .55em; font-weight: 700; }
-.stat-card .lbl { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
-@media (max-width: 480px) { .hero-stats { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 400px) { .hero-stats { grid-template-columns: 1fr; } }
-.stat-card.wide { grid-column: 1 / -1; }
-/* ---------- sections ---------- */
-section { padding: clamp(56px, 9vw, 84px) 0 0; scroll-margin-top: 76px; }
-.sec-head {
-  display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap;
-  margin-bottom: clamp(28px, 5vw, 42px);
-}
-.sec-head .head-txt { max-width: 42em; }
-.sec-head .eyebrow {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--accent); margin: 0 0 14px; padding-bottom: 9px;
-}
-.sec-head h2 {
-  font-family: var(--font-display); font-weight: 800; font-size: clamp(25px, 4.2vw, 36px);
-  letter-spacing: -.02em; margin: 0; color: var(--ink); text-wrap: balance;
-}
-.sec-head p { color: var(--muted); margin: 12px 0 0; font-size: 15px; }
-.sec-index {
-  font-family: var(--font-mono); font-size: 13px; color: var(--muted); flex: none;
-  border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px;
-}
-/* ---------- projects : bento grid ---------- */
-.bento {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: minmax(120px, auto);
-  gap: 16px;
-}
-.bento-card {
-  position: relative;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
-  padding: clamp(24px, 3.4vw, 32px);
-  box-shadow: var(--shadow);
-  display: flex; flex-direction: column; gap: 12px;
-  overflow: hidden;
-  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
-}
-.bento-card::before {
-  content: ""; position: absolute; inset: 0; z-index: 0; opacity: 0; pointer-events: none;
-  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
-  transition: opacity .35s ease;
-}
-.bento-card:hover::before { opacity: 1; }
-.bento-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-@media (prefers-reduced-motion: reduce) { .bento-card, .bento-card:hover { transform: none; transition: none; } }
-.bento-card .idx {
-  position: absolute; top: 10px; right: 18px;
-  font-family: var(--font-display); font-weight: 800; font-size: 64px;
-  color: var(--ghost); line-height: 1; z-index: 0; user-select: none;
-}
-.bento-card > * { position: relative; z-index: 1; }
-.bento-card .tag {
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 12px; align-self: flex-start;
-}
-.bento-card h3 {
-  font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -.01em;
-  margin: 2px 0 0; color: var(--ink);
-}
-.bento-card p { margin: 0; color: var(--muted); font-size: 14.5px; max-width: 46em; }
-.bento-card .foot {
-  margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--line);
-  display: flex; justify-content: space-between; align-items: baseline; gap: 10px 16px; flex-wrap: wrap;
-}
-.bento-card .metric { font-size: 13.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
-.bento-card .metric b { color: var(--accent); }
-.bento-card .links { display: flex; gap: 14px; flex-wrap: wrap; }
-.bento-card .links a { font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; color: var(--accent); }
-.c-score { grid-column: 1 / 5; grid-row: 1 / 3; }
-.c-certa { grid-column: 5 / 7; grid-row: 1 / 2; }
-.c-kkeul { grid-column: 5 / 7; grid-row: 2 / 3; }
-.c-sogon { grid-column: 1 / 3; grid-row: 3 / 4; }
-.c-ad { grid-column: 3 / 5; grid-row: 3 / 4; }
-.c-grid { grid-column: 5 / 7; grid-row: 3 / 4; }
-.c-score h3 { font-size: 27px; }
+.cta-pill:hover { transform: translateY(-2px); }
+.burger { display: none; margin-left: auto; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; position: relative; }
+.burger span { position: absolute; left: 13px; right: 13px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .25s, top .25s, opacity .2s; }
+.burger span:nth-child(1) { top: 16px; } .burger span:nth-child(2) { top: 21px; } .burger span:nth-child(3) { top: 26px; }
+.burger[aria-expanded="true"] span:nth-child(1) { top: 21px; transform: rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+.drawer { display: none; }
 @media (max-width: 860px) {
-  .bento { grid-template-columns: 1fr 1fr; }
-  .c-score { grid-column: 1 / 3; grid-row: auto; }
-  .c-certa, .c-kkeul, .c-sogon, .c-ad, .c-grid { grid-column: auto / span 1; grid-row: auto; }
+  .nav, .hdr .cta-pill { display: none; }
+  .burger { display: block; }
+  .drawer {
+    display: block; position: fixed; inset: 68px 0 auto 0; z-index: 49;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    transform: translateY(-110%); transition: transform .35s var(--ease); visibility: hidden;
+  }
+  .drawer.open { transform: none; visibility: visible; }
+  .drawer nav { display: flex; flex-direction: column; padding: 8px var(--pad) 24px; }
+  .drawer a { font-family: var(--font-display); font-size: 26px; font-weight: 700; padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .drawer a small { font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-weight: 500; align-self: center; }
+  .drawer .cta-pill { display: inline-flex; margin-top: 20px; align-self: flex-start; font-size: 15px; font-family: var(--font-body); border: 0; }
 }
-@media (max-width: 560px) {
-  .bento { grid-template-columns: 1fr; }
-  .c-score, .c-certa, .c-kkeul, .c-sogon, .c-ad, .c-grid { grid-column: 1 / -1; }
-  .bento-card .idx { font-size: 48px; }
+
+/* ================= hero ================= */
+.hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; padding-top: 110px; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; width: 70vw; height: 70vw; max-width: 900px; max-height: 900px;
+  right: -18vw; top: -12vw; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(212, 255, 58, .16), transparent 62%);
+  filter: blur(20px);
 }
-.biz-note {
-  margin-top: 18px; border: 1px solid var(--line); border-left: 3px solid var(--accent);
-  border-radius: 12px; background: var(--surface); padding: 18px 22px; font-size: 14.5px; color: var(--muted);
-  display: flex; gap: 10px 18px; align-items: baseline; flex-wrap: wrap; justify-content: space-between;
+.hero-top { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 5vw, 64px); align-items: center; position: relative; flex: 1; }
+.kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 26px; }
+.kicker .dot { width: 8px; height: 8px; border-radius: 50%; background: #D4FF3A; box-shadow: 0 0 0 0 rgba(212,255,58,.6); animation: ping 2s infinite; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(212,255,58,.55); } 100% { box-shadow: 0 0 0 12px rgba(212,255,58,0); } }
+.hero h1 {
+  font-family: var(--font-display); font-weight: 800; margin: 0;
+  font-size: clamp(40px, 7.4vw, 96px); line-height: 1.02; letter-spacing: -.035em;
 }
-.biz-note b { color: var(--ink); }
-.biz-note .txt { flex: 1 1 26em; }
-.biz-note a { font-weight: 600; white-space: nowrap; }
-/* ---------- awards : vertical timeline ---------- */
-.timeline { display: flex; flex-direction: column; }
-.tl-year { position: relative; display: grid; grid-template-columns: 108px 1fr; column-gap: 26px; padding-bottom: 44px; }
-.tl-year:last-child { padding-bottom: 0; }
-.tl-year::before {
-  content: ""; position: absolute; left: 53px; top: 40px; bottom: -4px; width: 2px;
-  background: repeating-linear-gradient(to bottom, var(--line) 0 6px, transparent 6px 11px);
+.hero h1 .ko { font-family: var(--font-body); font-weight: 800; letter-spacing: -.04em; }
+.hero h1 .hl { color: var(--bg); background: var(--ink); padding: 0 .12em; border-radius: .12em; display: inline-block; line-height: 1.05; transform: rotate(-1.5deg); }
+.hero h1 .acc { color: #D4FF3A; }
+:root[data-theme="light"] .hero h1 .acc { color: var(--ink); text-decoration: underline; text-decoration-color: #B6E21F; text-decoration-thickness: .12em; text-underline-offset: .08em; }
+.hero .lede { max-width: 34em; color: var(--muted); font-size: clamp(15px, 1.5vw, 17px); margin: 28px 0 34px; }
+.hero .lede b { color: var(--ink); font-weight: 700; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 15px;
+  border: 1px solid var(--line); transition: transform .2s var(--ease), background .2s, border-color .2s;
 }
-.tl-year:last-child::before { display: none; }
-.tl-node { position: relative; display: flex; flex-direction: column; align-items: flex-start; }
-.tl-node .yr {
-  font-family: var(--font-display); font-weight: 800; font-size: 26px; letter-spacing: -.02em;
-  color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums;
-}
-.tl-node .yr.mixed { font-size: 17px; }
-.tl-node .dot {
-  position: relative;
-  width: 13px; height: 13px; border-radius: 50%; background: var(--accent);
-  box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line);
-  margin-top: 10px;
-}
-.tl-year.current .dot::after {
-  content: ""; position: absolute; inset: -5px; border-radius: 50%;
-  border: 2px solid var(--accent); opacity: .6; animation: dotPulse 2.2s ease-out infinite;
-}
-@keyframes dotPulse {
-  0% { transform: scale(.7); opacity: .55; }
-  100% { transform: scale(2); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) { .tl-year.current .dot::after { animation: none; opacity: 0; } }
-.tl-year.other .dot { background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line); }
-.tl-cards { display: flex; flex-direction: column; gap: 10px; }
-.tl-card {
-  background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
-  border-radius: 12px; padding: 14px 18px; box-shadow: var(--shadow);
-  transition: transform .16s ease, box-shadow .16s ease;
-}
-.tl-card:hover { transform: translateX(3px); box-shadow: var(--shadow-lg); }
-@media (prefers-reduced-motion: reduce) { .tl-card:hover { transform: none; } }
-.tl-card .t { font-weight: 650; font-size: 15.5px; color: var(--ink); }
-.tl-card .d { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
-.tl-card.highlight {
-  background: linear-gradient(135deg, var(--accent-soft), var(--surface) 65%);
-  border-left-width: 4px;
-  border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
-  box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent);
-}
-.tl-card.highlight .t { font-weight: 750; }
-.tl-badge {
-  position: relative; overflow: hidden;
-  display: inline-flex; align-items: center; gap: 4px; margin-left: 10px; vertical-align: middle;
-  font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .04em;
-  color: var(--accent-on); background: var(--accent); border-radius: 999px; padding: 3px 10px 3px 8px;
-}
-.tl-badge::after {
-  content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
-  background: linear-gradient(115deg, transparent, rgba(255,255,255,.55), transparent);
-  transform: skewX(-20deg); animation: badgeShine 3.2s ease-in-out infinite;
-}
-@keyframes badgeShine {
-  0%, 30% { left: -60%; }
-  70%, 100% { left: 130%; }
-}
-@media (prefers-reduced-motion: reduce) { .tl-badge::after { display: none; } }
-.tl-badge::before { content: "\2605"; font-size: 10px; }
-.tl-badge.gold { background: linear-gradient(120deg, #C99A2E, #EBC565); color: #2B2005; }
-.tl-badge.gold::before { content: "\1F3C6"; font-size: 11px; }
-.tl-card.highlight.gold {
-  background: linear-gradient(135deg, color-mix(in srgb, #EBC565 24%, var(--surface)), var(--surface) 65%);
-  border-color: color-mix(in srgb, #C99A2E 45%, var(--line));
-  box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, #C99A2E 22%, transparent);
-}
-.tl-date {
-  font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; color: var(--muted);
-  margin-right: 9px; font-variant-numeric: tabular-nums;
-}
-@media (max-width: 560px) {
-  .tl-year { grid-template-columns: 1fr; row-gap: 12px; }
-  .tl-year::before { left: 5px; top: 54px; }
-  .tl-node { flex-direction: row; align-items: center; gap: 10px; }
-  .tl-node .dot { margin-top: 0; }
-}
-/* ---------- certifications ---------- */
-.certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 720px) { .certs { grid-template-columns: 1fr; } }
-.cert {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px;
-  box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
-}
-.cert .avatar {
-  width: 40px; height: 40px; border-radius: 12px; background: var(--accent-soft); color: var(--accent);
-  font-family: var(--font-display); font-weight: 800; font-size: 15px;
-  display: flex; align-items: center; justify-content: center;
-}
-.cert .issuer { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.cert h3 { font-size: 16.5px; font-weight: 700; margin: 0; letter-spacing: -.01em; color: var(--ink); }
-.cert p { margin: 0; font-size: 13.5px; color: var(--muted); }
-.cert .badge {
-  display: inline-block; margin-top: auto; align-self: flex-start;
-  font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft);
-  border-radius: 999px; padding: 3px 11px;
-}
-/* ---------- tech stack ---------- */
-.stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-@media (max-width: 780px) { .stack-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px) { .stack-grid { grid-template-columns: 1fr; } }
-.stack-block {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px;
-  box-shadow: var(--shadow);
-}
-.stack-block .cat {
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--muted); font-weight: 600; margin-bottom: 12px; display: block;
-}
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  font-size: 13.5px; font-weight: 550; border: 1px solid var(--line); background: var(--bg);
-  border-radius: 999px; padding: 5px 14px; color: var(--ink);
-}
-.chip.hl { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); background: var(--accent-soft); color: var(--accent); font-weight: 650; }
-.chip small { opacity: .65; font-size: 12px; }
-.stack-note { color: var(--muted); font-size: 14px; margin: 20px 0 0; max-width: 44em; }
-.stack-note b { color: var(--ink); }
-/* ---------- now ---------- */
-.now-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-@media (max-width: 700px) { .now-list { grid-template-columns: 1fr; } }
-.now-list li {
-  display: flex; gap: 14px; align-items: flex-start; color: var(--muted); font-size: 14.5px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px;
-}
-.now-list .n {
-  flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-soft); color: var(--accent);
-  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-}
-.now-list b { color: var(--ink); font-weight: 650; }
-/* ---------- footer : cta block ---------- */
-footer.cta-footer { margin-top: clamp(64px, 10vw, 96px); background: var(--accent); color: var(--accent-on); }
-.footer-inner { padding: clamp(52px, 8vw, 76px) 0 40px; }
-.footer-cta {
-  font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 4.6vw, 38px);
-  letter-spacing: -.02em; margin: 0 0 26px; line-height: 1.35; color: var(--accent-on); text-wrap: balance;
-}
-.footer-contacts { display: flex; gap: 12px; flex-wrap: wrap; }
-.footer-row {
-  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
-  margin-top: 44px; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--accent-on) 20%, transparent);
-  font-size: 13px; color: color-mix(in srgb, var(--accent-on) 70%, transparent);
-}
-.footer-row a { color: var(--accent-on); }
-.footer-row .mono { font-family: var(--font-mono); font-size: 12.5px; }
-/* ---------- hero : black business card (Tapple style) ---------- */
-.hero-visual { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
-.biz-card {
-  position: relative; overflow: hidden; aspect-ratio: 1.75 / 1; width: 100%; max-width: 420px; margin: 10px auto 8px;
-  border-radius: 22px; padding: clamp(18px, 4vw, 26px);
-  background: linear-gradient(135deg, var(--card-a) 0%, var(--card-b) 62%, #000 100%);
-  color: #F4F5F8; box-shadow: 0 30px 60px -24px rgba(10, 14, 30, .55), 0 10px 20px -10px rgba(10, 14, 30, .35);
-  transform: rotate(8deg); transition: transform .5s cubic-bezier(.2,.8,.2,1);
+.btn:hover { transform: translateY(-2px); border-color: var(--ink); }
+.btn.solid { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn .arr { transition: transform .2s var(--ease); }
+.btn:hover .arr { transform: translate(3px, -3px); }
+@media (max-width: 520px) { .actions .btn { flex: 1 1 100%; } }
+
+/* 3D tilt business card */
+.card-stage { perspective: 1100px; display: flex; justify-content: center; padding: 10px 0; }
+.bizcard {
+  --rx: 0deg; --ry: 0deg;
+  position: relative; width: min(100%, 440px); aspect-ratio: 1.72 / 1; border-radius: 22px;
+  padding: clamp(20px, 3.4vw, 30px); color: #F4F4F0; overflow: hidden;
+  background:
+    radial-gradient(120% 140% at 0% 0%, #3A3B40 0%, #16171A 45%, #050506 100%);
+  box-shadow: 0 50px 80px -30px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.08) inset;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(-6deg);
+  transform-style: preserve-3d; transition: transform .6s var(--ease);
   display: flex; flex-direction: column;
 }
-.biz-card:hover { transform: rotate(3deg) translateY(-4px); }
-.biz-card::after {
+.bizcard.live { transition: transform .08s linear; }
+.bizcard::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.12) 45%, transparent 60%);
-  background-size: 250% 100%; animation: cardSheen 6s ease-in-out infinite;
+  background: radial-gradient(400px circle at var(--gx, 30%) var(--gy, 20%), rgba(255,255,255,.16), transparent 45%);
 }
-@keyframes cardSheen { 0%, 100% { background-position: 120% 0; } 50% { background-position: -20% 0; } }
-@media (prefers-reduced-motion: reduce) { .biz-card, .biz-card:hover { transform: rotate(6deg); transition: none; } .biz-card::after { animation: none; } }
-.biz-card .bc-brand { font-family: var(--font-display); font-weight: 800; font-size: 19px; }
-.biz-card .bc-tag { font-size: 12px; color: rgba(244,245,248,.68); margin-top: 4px; line-height: 1.5; padding-right: 54px; }
-.biz-card .bc-side {
-  position: absolute; top: clamp(18px, 4vw, 26px); right: clamp(18px, 4vw, 26px);
-  font-size: 11px; font-weight: 600; color: rgba(244,245,248,.82);
-  background: rgba(255,255,255,.12); border-radius: 999px; padding: 3px 10px;
+.bizcard .chip { width: 38px; height: 28px; border-radius: 6px; background: linear-gradient(135deg, #E9F7A8, #B6D52A); opacity: .9; margin-top: auto; margin-bottom: 14px; }
+.bizcard .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.bizcard .b { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: .02em; }
+.bizcard .tag { font-size: 12px; color: rgba(244,244,240,.62); margin-top: 2px; line-height: 1.5; }
+.bizcard .side { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 3px 10px; color: rgba(244,244,240,.8); flex: none; }
+.bizcard .bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.bizcard .role { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: #D4FF3A; }
+.bizcard .name { font-size: clamp(24px, 4vw, 32px); font-weight: 800; letter-spacing: .04em; line-height: 1.1; margin-top: 4px; }
+.bizcard .nfc { width: 26px; height: 26px; opacity: .6; flex: none; }
+.card-cap { text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-top: 28px; }
+@media (max-width: 900px) {
+  .hero-top { grid-template-columns: 1fr; }
+  .card-stage { order: -1; padding-top: 6px; }
+  .bizcard { width: min(100%, 360px); }
+  .card-cap { display: none; }
 }
-.biz-card .bc-bottom { margin-top: auto; text-align: right; line-height: 1.3; }
-.biz-card .bc-role { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: rgba(244,245,248,.9); }
-.biz-card .bc-name { font-size: clamp(21px, 4vw, 26px); font-weight: 800; letter-spacing: .02em; margin-top: 2px; }
-@media (max-width: 860px) { .biz-card { max-width: 360px; transform: rotate(6deg); } }
-@media (max-width: 400px) { .biz-card { transform: rotate(4deg); } }
-/* ---------- links : Tapple-style list rows ---------- */
-.link-list { display: flex; flex-direction: column; gap: 10px; }
-.link-row {
-  display: flex; align-items: center; gap: 14px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
-  padding: 16px 20px; color: var(--ink); font-weight: 700; font-size: 15px; box-shadow: var(--shadow);
-  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+
+/* wordmark + marquee */
+.wordmark {
+  font-family: var(--font-display); font-weight: 900; line-height: .8; letter-spacing: -.05em;
+  font-size: clamp(64px, 19vw, 280px); margin: clamp(40px, 6vw, 72px) 0 0; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px var(--line); user-select: none; text-align: center;
 }
-.link-row:hover { text-decoration: none; transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: color-mix(in srgb, var(--ink) 30%, var(--line)); }
-@media (prefers-reduced-motion: reduce) { .link-row:hover { transform: none; } }
-.link-row .ic {
-  flex: none; width: 34px; height: 34px; border-radius: 10px; background: var(--accent-soft); color: var(--ink);
-  display: flex; align-items: center; justify-content: center;
+.marquee { border-block: 1px solid var(--line); overflow: hidden; background: var(--bg-2); }
+.marquee .track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+.marquee span { font-family: var(--font-display); font-weight: 700; font-size: clamp(18px, 2.4vw, 26px); padding: 18px 0; display: inline-flex; align-items: center; white-space: nowrap; }
+.marquee span::after { content: "✦"; color: #D4FF3A; margin: 0 28px; font-size: .7em; }
+:root[data-theme="light"] .marquee span::after { color: var(--ink); }
+@keyframes slide { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee .track { animation: none; } }
+
+/* ================= sections ================= */
+.sec { padding: clamp(80px, 12vw, 150px) 0 0; scroll-margin-top: 60px; }
+.sec-head { display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: clamp(36px, 6vw, 64px); align-items: end; }
+.sec-no { font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: .08em; }
+.sec-no b { color: var(--ink); font-weight: 600; }
+.sec-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(34px, 6vw, 72px); line-height: 1; letter-spacing: -.035em; margin: 0; }
+.sec-title .ko { font-family: var(--font-body); letter-spacing: -.04em; }
+.sec-title em { font-style: normal; color: var(--muted); }
+@media (max-width: 760px) { .sec-head { grid-template-columns: 1fr; gap: 14px; } }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.stat { padding: 28px 22px 4px 0; border-right: 1px solid var(--line); padding-left: 22px; }
+.stat:first-child { padding-left: 0; }
+.stat:last-child { border-right: 0; }
+.stat .n { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 5vw, 60px); letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat .n small { font-size: .42em; color: var(--muted); font-weight: 700; margin-left: 4px; letter-spacing: -.01em; }
+.stat .l { color: var(--muted); font-size: 14px; margin-top: 12px; }
+@media (max-width: 860px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat { border-right: 0; padding-left: 0; border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+  .stat:nth-child(odd) { border-right: 1px solid var(--line); padding-right: 16px; }
+  .stat:nth-child(even) { padding-left: 16px; }
 }
-.link-row .ic svg { width: 18px; height: 18px; }
-.link-row .ic.ig { background: linear-gradient(135deg, #FEDA75, #FA7E1E 30%, #D62976 60%, #962FBF 85%); color: #fff; }
-.link-row .lt { flex: 1; min-width: 0; }
-.link-row .lt small { display: block; font-weight: 500; font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
-.link-row .go { flex: none; color: var(--muted); font-size: 16px; }
-/* ---------- intro panels ---------- */
-.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 760px) { .intro-grid { grid-template-columns: 1fr; } }
-.intro-panel {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
-  padding: clamp(22px, 3.4vw, 30px); box-shadow: var(--shadow); min-width: 0;
+
+/* about */
+.about { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 24px clamp(24px, 4vw, 56px); }
+.about .lead {
+  grid-column: 2 / 4; font-family: var(--font-body); font-weight: 700;
+  font-size: clamp(22px, 3.2vw, 38px); line-height: 1.45; letter-spacing: -.03em; margin: 0 0 24px;
 }
-.intro-panel .lbl { font-size: 13px; font-weight: 700; color: var(--muted); margin: 0 0 10px; }
-.intro-panel h3 { font-family: var(--font-display); font-size: 21px; font-weight: 800; letter-spacing: -.01em; margin: 0 0 12px; text-wrap: balance; }
-.intro-panel p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
-.intro-panel p + p { margin-top: 10px; }
-.intro-panel b { color: var(--ink); }
-.intro-panel.dark { background: linear-gradient(135deg, var(--card-a), var(--card-b)); border-color: transparent; color: #F4F5F8; }
-.intro-panel.dark .lbl, .intro-panel.dark p { color: rgba(244,245,248,.72); }
-.intro-panel.dark b, .intro-panel.dark h3 { color: #fff; }
-.intro-panel.wide { grid-column: 1 / -1; }
-.svc-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-.svc-chips span { font-size: 13px; font-weight: 600; background: var(--accent-soft); border-radius: 999px; padding: 5px 13px; color: var(--ink); }
-/* ---------- reveal ---------- */
-.reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
-.reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+.about .lead span { color: var(--muted); }
+.about .col h3 { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.about .col p { margin: 0 0 14px; color: var(--muted); font-size: 15.5px; line-height: 1.85; }
+.about .col p b { color: var(--ink); font-weight: 650; }
+.about .col:nth-of-type(1) { grid-column: 2; }
+.about .col:nth-of-type(2) { grid-column: 3; }
+@media (max-width: 900px) {
+  .about { grid-template-columns: 1fr; }
+  .about .lead, .about .col:nth-of-type(1), .about .col:nth-of-type(2) { grid-column: 1; }
+}
+
+/* work : index list */
+.work { border-top: 1px solid var(--line); }
+.item {
+  position: relative; display: grid; grid-template-columns: 70px 1.3fr 1fr 44px; gap: 20px; align-items: center;
+  padding: 30px 0; border-bottom: 1px solid var(--line); transition: padding .35s var(--ease);
+}
+.item::before {
+  content: ""; position: absolute; inset: 0 calc(var(--pad) * -1); background: var(--bg-2); z-index: -1;
+  transform: scaleY(0); transform-origin: bottom; transition: transform .35s var(--ease);
+}
+.item:hover::before { transform: scaleY(1); }
+.item .no { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.item h3 { font-family: var(--font-display); font-weight: 800; font-size: clamp(26px, 3.6vw, 44px); letter-spacing: -.03em; line-height: 1.1; margin: 0; }
+.item h3 .ko { font-family: var(--font-body); letter-spacing: -.04em; }
+.item .meta { display: flex; flex-direction: column; gap: 8px; }
+.item .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.item .tags span { font-family: var(--font-mono); font-size: 11.5px; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--muted); }
+.item .tags span.new { background: #D4FF3A; color: #0A0A0B; border-color: #D4FF3A; font-weight: 700; }
+.item .desc { color: var(--muted); font-size: 14.5px; margin: 0; }
+.item .kpi { font-weight: 700; font-size: 14.5px; }
+.item .kpi b { color: #D4FF3A; }
+:root[data-theme="light"] .item .kpi b { color: var(--ink); background: #D4FF3A; padding: 0 4px; }
+.item .go {
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center;
+  font-size: 18px; transition: background .25s, color .25s, transform .3s var(--ease), border-color .25s;
+}
+.item:hover .go { background: #D4FF3A; color: #0A0A0B; border-color: #D4FF3A; transform: rotate(-45deg); }
+.item .go.na { opacity: .35; }
+.item:hover .go.na { background: transparent; color: inherit; border-color: var(--line); transform: none; }
+.item .urls { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.item .urls a { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.item .urls a:hover { text-decoration-color: currentColor; }
+.item > a.cover { position: absolute; inset: 0; z-index: 0; }
+.item .meta, .item .go, .item .urls { position: relative; z-index: 1; }
+@media (max-width: 760px) {
+  .item { grid-template-columns: 1fr 44px; gap: 12px 16px; padding: 26px 0; }
+  .item .no { grid-column: 1 / -1; }
+  .item h3 { grid-column: 1; grid-row: 2; }
+  .item .go { grid-column: 2; grid-row: 2; }
+  .item .meta { grid-column: 1 / -1; }
+}
+.press {
+  display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: space-between;
+  margin-top: 28px; padding: 22px 26px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line);
+}
+.press p { margin: 0; color: var(--muted); font-size: 15px; flex: 1 1 24em; }
+.press p b { color: var(--ink); }
+.press a { font-weight: 700; white-space: nowrap; }
+
+/* awards */
+.awards { border-top: 1px solid var(--line); }
+.year { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+.year .y { font-family: var(--font-display); font-weight: 800; font-size: clamp(44px, 6vw, 80px); letter-spacing: -.05em; line-height: .9; color: var(--muted); }
+.year.now .y { color: var(--ink); }
+.year ul { list-style: none; margin: 0; padding: 0; }
+.year li { display: grid; grid-template-columns: 76px 1fr auto; gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+.year li:last-child { border-bottom: 0; }
+.year .d { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.year .t { font-weight: 650; font-size: 16.5px; }
+.year .t small { display: block; font-weight: 500; font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+.year .badge { font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 4px 12px; border: 1px solid var(--line); white-space: nowrap; }
+.year .badge.gold { background: linear-gradient(120deg, #C99A2E, #F1D27A); color: #241A03; border: 0; }
+.year .badge.lime { background: #D4FF3A; color: #0A0A0B; border: 0; }
+.year li.top .t { font-size: clamp(18px, 2vw, 21px); font-weight: 800; }
+@media (max-width: 760px) {
+  .year { grid-template-columns: 1fr; gap: 10px; }
+  .year li { grid-template-columns: 1fr auto; gap: 4px 12px; }
+  .year .d { grid-column: 1 / -1; }
+}
+
+/* certs */
+.certs { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.cert { background: var(--bg); padding: 26px 24px; display: flex; flex-direction: column; gap: 8px; min-height: 190px; transition: background .25s; }
+.cert:hover { background: var(--bg-2); }
+.cert .iss { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; }
+.cert h3 { margin: 6px 0 0; font-size: 17px; font-weight: 750; line-height: 1.4; letter-spacing: -.01em; }
+.cert p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.cert .st { margin-top: auto; font-family: var(--font-mono); font-size: 11.5px; color: var(--ink); }
+.cert .st::before { content: "● "; color: #D4FF3A; }
+:root[data-theme="light"] .cert .st::before { color: #7FA300; }
+
+/* stack */
+.stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+.stk { padding: 26px 24px 26px 0; border-bottom: 1px solid var(--line); }
+.stk:not(:nth-child(3n)) { border-right: 1px solid var(--line); }
+.stk:not(:nth-child(3n+1)) { padding-left: 24px; }
+.stk .c { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; display: block; }
+.stk .v { font-family: var(--font-display); font-weight: 700; font-size: clamp(19px, 2.2vw, 24px); line-height: 1.5; letter-spacing: -.01em; }
+.stk .v i { font-style: normal; color: var(--muted); font-weight: 500; }
+@media (max-width: 860px) {
+  .stack { grid-template-columns: 1fr 1fr; }
+  .stk, .stk:not(:nth-child(3n+1)) { padding: 22px 16px 22px 0; border-right: 0; }
+  .stk:nth-child(odd) { border-right: 1px solid var(--line); }
+  .stk:nth-child(even) { padding-left: 16px; }
+}
+@media (max-width: 480px) {
+  .stack { grid-template-columns: 1fr; }
+  .stk:nth-child(odd) { border-right: 0; }
+  .stk:nth-child(even) { padding-left: 0; }
+}
+
+/* outsourcing */
+.contact {
+  position: relative; overflow: hidden; border-radius: clamp(24px, 3vw, 36px);
+  background: #D4FF3A; color: #0A0A0B; padding: clamp(32px, 6vw, 72px);
+}
+.contact::after {
+  content: "T"; position: absolute; right: -2%; bottom: -28%; font-family: var(--font-display); font-weight: 900;
+  font-size: clamp(260px, 40vw, 520px); line-height: 1; color: rgba(10,10,11,.06); pointer-events: none;
+}
+.contact .lbl { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 20px; }
+.contact h2 { font-family: var(--font-body); font-weight: 800; font-size: clamp(30px, 5.4vw, 64px); line-height: 1.12; letter-spacing: -.045em; margin: 0 0 24px; max-width: 14em; position: relative; z-index: 1; }
+.contact > p { max-width: 40em; font-size: 16px; line-height: 1.8; margin: 0 0 14px; position: relative; z-index: 1; color: rgba(10,10,11,.75); }
+.contact > p b { color: #0A0A0B; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 34px 0; position: relative; z-index: 1; }
+.step { background: rgba(10,10,11,.07); border-radius: 18px; padding: 18px; }
+.step .k { font-family: var(--font-mono); font-size: 12px; opacity: .6; }
+.step .h { font-weight: 800; font-size: 17px; margin-top: 6px; }
+.step .s { font-size: 13px; opacity: .7; margin-top: 2px; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
+.svc { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; position: relative; z-index: 1; }
+.svc span { border: 1.5px solid #0A0A0B; border-radius: 999px; padding: 6px 16px; font-weight: 700; font-size: 14px; }
+.contact .actions { position: relative; z-index: 1; }
+.contact .btn { border-color: #0A0A0B; }
+.contact .btn.solid { background: #0A0A0B; color: #D4FF3A; }
+
+/* footer */
+.foot { padding: clamp(80px, 12vw, 140px) 0 28px; }
+.foot .big {
+  font-family: var(--font-display); font-weight: 900; letter-spacing: -.055em; line-height: .78;
+  font-size: clamp(72px, 21.5vw, 300px); margin: 0; white-space: nowrap; text-align: center;
+  background: linear-gradient(180deg, var(--ink) 30%, transparent 105%); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.foot .bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-top: 28px; margin-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
+.foot .bar a:hover { color: var(--ink); }
+.theme-btn { background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 4px 14px; font: inherit; font-size: 13px; cursor: pointer; }
+.theme-btn:hover { color: var(--ink); border-color: var(--ink); }
+
+/* reveal */
+.rv { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } .kicker .dot { animation: none; } }
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main">본문 바로가기</a>
-<header class="site-header">
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <div class="wrap header-row">
-    <a class="logo" href="#top">TELOSIX</a>
-    <nav class="top" aria-label="주요 섹션">
-      <a href="#about">소개</a>
-      <a href="#projects">서비스</a>
-      <a href="#awards">수상경력</a>
-      <a href="#stack">기술 스택</a>
-      <a href="#outsourcing">외주 문의</a>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap row">
+    <a class="brand" href="#top" aria-label="Telosix 홈"><span class="mark">T</span>TELOSIX</a>
+    <nav class="nav" aria-label="주요 섹션">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#awards">Awards</a>
+      <a href="#stack">Stack</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNavWrap" aria-label="메뉴 열기">
-      <span class="menu-icon"><span></span><span></span><span></span></span>
-    </button>
-    <a class="btn btn-primary btn-sm header-cta" href="#outsourcing"><span class="label">외주 문의</span> ↗</a>
-  </div>
-  <div class="mobile-nav-wrap" id="mobileNavWrap">
-    <nav class="wrap mobile-nav" aria-label="모바일 메뉴">
-      <a href="#about">소개</a>
-      <a href="#projects">서비스</a>
-      <a href="#awards">수상경력</a>
-      <a href="#certs">자격증</a>
-      <a href="#stack">기술 스택</a>
-      <a href="#outsourcing">외주 문의</a>
-      <span class="divider"></span>
-      <a class="ext" href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">Telosix 디지털 명함 ↗</a>
-      <a class="ext" href="mailto:woojin052501@gmail.com">woojin052501@gmail.com</a>
-    </nav>
+    <a class="cta-pill" href="#contact">외주 문의 <span aria-hidden="true">↗</span></a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   </div>
 </header>
+<div class="drawer" id="drawer">
+  <nav aria-label="모바일 메뉴">
+    <a href="#about">About <small>01</small></a>
+    <a href="#work">Work <small>02</small></a>
+    <a href="#awards">Awards <small>03</small></a>
+    <a href="#certs">Certs <small>04</small></a>
+    <a href="#stack">Stack <small>05</small></a>
+    <a class="cta-pill" href="#contact">외주 문의 ↗</a>
+  </nav>
+</div>
+
 <main id="main">
-  <div class="wrap">
-    <!-- HERO : intro + black business card -->
-    <section class="hero-split" id="top">
-      <div class="hero-main reveal">
-        <p class="status-pill"><span class="pulse"></span>Currently building Telosix</p>
-        <p class="eyebrow">CEO &amp; Founder — Portfolio 2026</p>
-        <div class="handle" aria-label="Telosix">Telosix<span class="cursor">_</span></div>
-        <h1>안녕하세요, Telosix 대표 <span class="co">염우진</span>입니다.<br>디미고 진학을 꿈꾸는 중학생 창업가 겸 웹 개발자.</h1>
-        <p class="lede">아이디어를 현실로 만드는 학생 IT 기업 <b>Telosix</b>를 이끌고 있습니다. 기획부터 프론트엔드, 백엔드, 배포와 운영까지 서비스 개발의 전 과정을 직접 책임지며, 트래픽과 매출로 검증하며 성장하고 있습니다.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">디지털 명함 보기 ↗</a>
-          <a class="btn btn-ghost" href="mailto:woojin052501@gmail.com">woojin052501@gmail.com</a>
-          <a class="btn btn-ghost" href="#projects">서비스 보기 ↓</a>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-top">
+      <div>
+        <p class="kicker rv"><span class="dot"></span>Telosix — CEO &amp; Founder</p>
+        <h1 class="rv"><span class="ko">아이디어를</span><br><span class="hl"><span class="ko">현실로</span></span> <span class="acc">만듭니다.</span></h1>
+        <p class="lede rv">안녕하세요, 학생 IT 기업 <b>Telosix</b>의 대표 <b>염우진</b>입니다. 디미고 진학을 꿈꾸는 중학생 창업가 겸 풀스택 웹 개발자로, 기획부터 개발·배포·운영까지 서비스의 전 과정을 직접 만들고 숫자로 증명합니다.</p>
+        <div class="actions rv">
+          <a class="btn solid" href="#work">서비스 보기 <span class="arr">↗</span></a>
+          <a class="btn" href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">디지털 명함 <span class="arr">↗</span></a>
         </div>
       </div>
-      <div class="hero-visual reveal">
-        <div class="biz-card" aria-label="Telosix 명함 — CEO &amp; Founder 염우진">
-          <span class="bc-side">앞면</span>
-          <div class="bc-brand">Telosix</div>
-          <div class="bc-tag">디미고 진학을 꿈꾸는 중학생 창업가 겸 웹 개발자 염우진</div>
-          <div class="bc-bottom">
-            <div class="bc-role">CEO &amp; Founder</div>
-            <div class="bc-name">염우진</div>
+      <div class="rv">
+        <div class="card-stage">
+          <div class="bizcard" id="bizcard" aria-label="Telosix 명함 — CEO &amp; Founder 염우진">
+            <div class="top">
+              <div>
+                <div class="b">Telosix</div>
+                <div class="tag">디미고 진학을 꿈꾸는 중학생 창업가 겸 웹 개발자</div>
+              </div>
+              <span class="side">FRONT</span>
+            </div>
+            <div class="chip" aria-hidden="true"></div>
+            <div class="bottom">
+              <div>
+                <div class="role">CEO &amp; Founder</div>
+                <div class="name">염우진</div>
+              </div>
+              <svg class="nfc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8.5 7.5a6 6 0 0 1 0 9"/><path d="M12 5a9.5 9.5 0 0 1 0 14"/><path d="M15.5 2.5a13 13 0 0 1 0 19"/><path d="M5 10a2.5 2.5 0 0 1 0 4"/></svg>
+            </div>
           </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat-card">
-            <div class="num">84<small>만+</small></div>
-            <div class="lbl">인스타그램 릴스 조회수</div>
-          </div>
-          <div class="stat-card">
-            <div class="num">2만<small>뷰</small></div>
-            <div class="lbl">특목고 합격률 계산기 런칭 1개월</div>
-          </div>
-          <div class="stat-card wide">
-            <div class="num">전국 1위 <small>금상</small></div>
-            <div class="lbl">2026 전국 중학생 창업아이디어 경진대회</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ABOUT : company + CEO -->
-    <section id="about">
-      <div class="sec-head reveal">
-        <div class="head-txt">
-          <p class="eyebrow">About</p>
-          <h2>소개</h2>
-        </div>
-      </div>
-      <div class="intro-grid">
-        <article class="intro-panel dark reveal">
-          <p class="lbl">소개 · 회사</p>
-          <h3>Telosix</h3>
-          <p>아이디어를 현실로 만드는 IT 기업 <b>Telosix</b>는 단순한 상상을 넘어 일상과 교육에 혁신을 가져오는 IT 솔루션을 개발하는 학생 창업 기업입니다.</p>
-          <p>학생들의 공모전 및 대회 매칭 플랫폼 <b>Kkeul(끌)</b>과 실시간 익명 Q&amp;A 서비스 <b>Sogon(소곤)</b> 등 사용자의 니즈를 깊이 이해한 웹과 앱 프로덕트를 지속적으로 선보이고 있습니다. 나이와 한계를 뛰어넘어, 톡톡 튀는 아이디어와 탄탄한 기술력으로 세상에 긍정적인 변화를 이끌어내는 것을 목표로 성장하고 있습니다.</p>
-        </article>
-        <article class="intro-panel reveal">
-          <p class="lbl">소개 · 대표</p>
-          <h3>염우진 <small style="font-size:14px;color:var(--muted);font-weight:600">CEO &amp; Founder</small></h3>
-          <p>개발하는 학생 창업가, Telosix의 CEO이자 아이디어를 코드로 직접 구현하는 풀스택 웹 개발자입니다. <b>한국디지털미디어고등학교</b> 진학을 꿈꾸며, 기술과 비즈니스의 결합을 통해 새로운 가치를 창출하는 것에 몰두하고 있습니다.</p>
-          <p><b>TypeScript · Next.js</b> 기반의 프론트엔드 구축부터 <b>Supabase</b> 백엔드 설계, <b>C# · C++</b> 기반의 알고리즘 문제 해결까지 서비스 개발의 전 과정을 아우르며, 기획 단계의 아이디어 스케치부터 최종 서비스 배포 및 운영까지 책임감 있게 프로젝트를 이끌고 있습니다.</p>
-        </article>
-      </div>
-    </section>
-    <!-- LINKS : Tapple-style list -->
-    <section id="links">
-      <div class="sec-head reveal">
-        <div class="head-txt">
-          <p class="eyebrow">Links</p>
-          <h2>바로가기</h2>
-        </div>
-      </div>
-      <div class="link-list reveal">
-        <a class="link-row" href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">
-          <span class="ic ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
-          <span class="lt">Telosix 디지털 명함<small>공식 인스타그램 · 홈페이지 링크 모음</small></span>
-          <span class="go">↗</span>
-        </a>
-        <a class="link-row" href="https://highschool-score.com" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1"/></svg></span>
-          <span class="lt">특목고 합격률 계산기<small>highschool-score.com</small></span>
-          <span class="go">↗</span>
-        </a>
-        <a class="link-row" href="https://kkeul.vercel.app" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1"/></svg></span>
-          <span class="lt">Kkeul (끌) — 공모전·대회 매칭<small>kkeul.vercel.app</small></span>
-          <span class="go">↗</span>
-        </a>
-        <a class="link-row" href="https://certa-theta.vercel.app" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1"/></svg></span>
-          <span class="lt">Certa — 자격증 준비 플랫폼<small>certa-theta.vercel.app</small></span>
-          <span class="go">↗</span>
-        </a>
-      </div>
-    </section>
-    <!-- PROJECTS : bento grid -->
-    <section id="projects">
-      <div class="sec-head reveal">
-        <div class="head-txt">
-          <p class="eyebrow">Products — Telosix</p>
-          <h2>서비스 포트폴리오</h2>
-          <p>기획부터 개발, 배포, 마케팅까지 Telosix가 직접 만들고 운영하는 서비스들입니다.</p>
-        </div>
-        <span class="sec-index">06 shipped</span>
-      </div>
-      <div class="bento">
-        <article class="bento-card c-score reveal">
-          <span class="idx">01</span>
-          <span class="tag">Web Platform · EdTech</span>
-          <h3>특목고 합격률 계산기 · 스코어위키</h3>
-          <p>고입·내신 성적을 분석해 특목고 합격 가능성을 계산해 주는 웹 플랫폼. 파편화된 입시 정보와 데이터 부족 문제를 학생의 시각에서 발견하고 직접 해결했습니다. 합격률 계산기는 성적 분석 도구를, 스코어위키는 입시 정보 위키를 담당합니다.</p>
-          <div class="foot">
-            <span class="metric">런칭 1개월 만에 <b>20,000뷰</b> 달성</span>
-            <span class="links">
-              <a href="https://highschool-score.com" target="_blank" rel="noopener">highschool-score.com ↗</a>
-              <a href="https://scorewiki.vercel.app" target="_blank" rel="noopener">scorewiki.vercel.app ↗</a>
-            </span>
-          </div>
-        </article>
-        <article class="bento-card c-kkeul reveal">
-          <span class="idx">02</span>
-          <span class="tag">Matching Platform</span>
-          <h3>Kkeul (끌)</h3>
-          <p>학생들의 공모전·대회 매칭 플랫폼. 흩어져 있는 대회 정보를 한곳에 모으고, 함께할 팀원과 기회를 연결해 참가까지 이어줍니다.</p>
-          <div class="foot">
-            <span class="metric">공모전 × 참가자 <b>매칭</b></span>
-            <span class="links"><a href="https://kkeul.vercel.app" target="_blank" rel="noopener">kkeul.vercel.app ↗</a></span>
-          </div>
-        </article>
-        <article class="bento-card c-certa reveal">
-          <span class="idx">03</span>
-          <span class="tag">Cert Platform</span>
-          <h3>Certa</h3>
-          <p>자격증 108종의 응시료·준비기간·합격률 비교부터 맞춤 추천, 기출 유형 문제풀이, 커뮤니티까지 제공하는 자격증 준비 플랫폼.</p>
-          <div class="foot">
-            <span class="metric"><b>108종</b> 자격증 · <b>300+</b> 문항</span>
-            <span class="links"><a href="https://certa-theta.vercel.app" target="_blank" rel="noopener">certa-theta.vercel.app ↗</a></span>
-          </div>
-        </article>
-        <article class="bento-card c-sogon reveal">
-          <span class="idx">04</span>
-          <span class="tag">New · Realtime Q&amp;A</span>
-          <h3>Sogon (소곤)</h3>
-          <p>실시간 익명 Q&amp;A 서비스. 발표·수업·행사에서 부담 없이 질문하고, 진행자는 실시간으로 확인하고 답할 수 있습니다.</p>
-          <div class="foot">
-            <span class="metric"><b>실시간</b> 익명 질문</span>
-          </div>
-        </article>
-        <article class="bento-card c-ad reveal">
-          <span class="idx">05</span>
-          <span class="tag">Ad Marketplace</span>
-          <h3>1,000원 광고판</h3>
-          <p>소상공인을 타겟으로 부담 없는 가격에 광고 지면을 판매하는 실험적 광고 슬롯 플랫폼.</p>
-          <div class="foot">
-            <span class="metric">런칭 4일 만에 매출 <b>260,000원</b></span>
-          </div>
-        </article>
-        <article class="bento-card c-grid reveal">
-          <span class="idx">06</span>
-          <span class="tag">Mobile Game</span>
-          <h3>Grid Shift</h3>
-          <p>직접 개발한 슬라이드 퍼즐 게임. Google Play 스토어 베타 테스트로 모바일 배포 경험을 쌓았습니다.</p>
-          <div class="foot">
-            <span class="metric">Google Play <b>베타 테스트</b></span>
-          </div>
-        </article>
-      </div>
-      <div class="biz-note reveal">
-        <span class="txt"><b>Privacy News</b> 인터뷰 — 대표 염우진의 인터뷰 "AI로 에듀테크 생태계를 혁신하다"가 보도되었습니다.</span>
-        <a href="https://privacynews.kr/s/394679" target="_blank" rel="noopener">기사 읽기 ↗</a>
-      </div>
-    </section>
-    <!-- AWARDS : vertical timeline -->
-    <section id="awards">
-      <div class="sec-head reveal">
-        <div class="head-txt">
-          <p class="eyebrow">Awards</p>
-          <h2>수상경력</h2>
-          <p>끝없는 도전과 열정으로 기술력과 창의성을 꾸준히 인정받고 있습니다.</p>
-        </div>
-      </div>
-      <div class="timeline">
-        <div class="tl-year current reveal">
-          <div class="tl-node"><span class="yr">2026</span><span class="dot"></span></div>
-          <div class="tl-cards">
-            <div class="tl-card highlight gold"><span class="t"><span class="tl-date">2026.08</span>2026 전국 중학생 창업아이디어 경진대회 금상<span class="tl-badge gold">전국 1위</span></span><span class="d">한국디지털미디어고등학교 주최 · 전국 결선 15팀 중 금상</span></div>
-            <div class="tl-card"><span class="t"><span class="tl-date">2026.08</span>제43회 한국정보올림피아드(KOI) 2차대회 중등부 전체부문 장려상</span></div>
-            <div class="tl-card highlight"><span class="t"><span class="tl-date">2026.07</span>2026 전국 중학생 창업아이디어 경진대회 본선 진출<span class="tl-badge">TOP 15</span></span><span class="d">전국 참가팀 중 본선 진출 15팀 선발</span></div>
-            <div class="tl-card"><span class="t"><span class="tl-date">2026.06</span>충남 학생 AI코딩 창의력 한마당 금상</span></div>
-            <div class="tl-card"><span class="t"><span class="tl-date">2026.05</span>제43회 한국정보올림피아드(KOI) 1차대회 중등부 지역부문 동상</span></div>
-          </div>
-        </div>
-        <div class="tl-year reveal">
-          <div class="tl-node"><span class="yr">2025</span><span class="dot"></span></div>
-          <div class="tl-cards">
-            <div class="tl-card"><span class="t"><span class="tl-date">2025.06</span>제2회 충남 학생 AI코딩 창의력 한마당 표창장</span></div>
-            <div class="tl-card"><span class="t">AI 코딩 창의 대회 1위</span><span class="d">교내 대회</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- CERTIFICATIONS -->
-    <section id="certs">
-      <div class="sec-head reveal">
-        <div class="head-txt">
-          <p class="eyebrow">Certifications</p>
-          <h2>자격증 및 인증</h2>
-        </div>
-      </div>
-      <div class="certs">
-        <div class="cert reveal">
-          <span class="avatar">GA</span>
-          <div class="issuer">Google</div>
-          <h3>Google Analytics 4 (GA4)</h3>
-          <p>웹 트래픽 분석과 데이터 기반 의사결정 역량 인증.</p>
-          <span class="badge">공식 인증</span>
-        </div>
-        <div class="cert reveal">
-          <span class="avatar">PM</span>
-          <div class="issuer">PMI</div>
-          <h3>PMI Kickoff</h3>
-          <p>프로젝트 관리 기초 과정 수료.</p>
-          <span class="badge">수료</span>
-        </div>
-        <div class="cert reveal">
-          <span class="avatar">PR</span>
-          <div class="issuer">PMI</div>
-          <h3>Project Management Ready</h3>
-          <p>프로젝트 관리 입문 자격 — PMI 기초 자격증.</p>
-          <span class="badge">기초 자격증</span>
-        </div>
-        <div class="cert reveal">
-          <span class="avatar">FA</span>
-          <div class="issuer">PMI · 2026.07</div>
-          <h3>Fundamentals of Agile Project Management</h3>
-          <p>애자일 방법론 기반 프로젝트 관리 기초 과정 수료.</p>
-          <span class="badge">수료</span>
-        </div>
-        <div class="cert reveal">
-          <span class="avatar">FP</span>
-          <div class="issuer">PMI · 2026.07</div>
-          <h3>Fundamentals of Predictive Project Management</h3>
-          <p>예측형(전통적) 프로젝트 관리 기초 과정 수료.</p>
-          <span class="badge">수료</span>
-        </div>
-      </div>
-    </section>
-    <!-- TECH STACK -->
-    <section id="stack">
-      <div class="sec-head reveal">
-        <div class="head-txt">
-          <p class="eyebrow">Tech Stack</p>
-          <h2>기술 스택</h2>
-        </div>
-      </div>
-      <div class="stack-grid reveal">
-        <div class="stack-block">
-          <span class="cat">Languages</span>
-          <div class="chips"><span class="chip hl">TypeScript</span><span class="chip">Python</span><span class="chip">C#</span><span class="chip">C / C++</span></div>
-        </div>
-        <div class="stack-block">
-          <span class="cat">Frontend</span>
-          <div class="chips"><span class="chip hl">Next.js</span><span class="chip">React</span></div>
-        </div>
-        <div class="stack-block">
-          <span class="cat">Backend · Infra</span>
-          <div class="chips"><span class="chip hl">Supabase <small>— 설계 · RLS</small></span><span class="chip">Vercel</span><span class="chip">Capacitor</span></div>
-        </div>
-        <div class="stack-block">
-          <span class="cat">Algorithm</span>
-          <div class="chips"><span class="chip">C++ 문제 해결</span><span class="chip">KOI</span></div>
-        </div>
-        <div class="stack-block">
-          <span class="cat">AI · Method</span>
-          <div class="chips"><span class="chip">Vibe Coding</span><span class="chip">Cursor</span><span class="chip">Claude</span></div>
-        </div>
-        <div class="stack-block">
-          <span class="cat">Growth</span>
-          <div class="chips"><span class="chip">GA4</span><span class="chip">Search Console</span><span class="chip">AdSense</span><span class="chip">Kakao AdFit</span></div>
-        </div>
-      </div>
-    </section>
-    <!-- OUTSOURCING -->
-    <section id="outsourcing">
-      <div class="sec-head reveal">
-        <div class="head-txt">
-          <p class="eyebrow">Work With Us</p>
-          <h2>외주 문의</h2>
-        </div>
-      </div>
-      <div class="intro-grid">
-        <article class="intro-panel wide reveal">
-          <p class="lbl">IT 외주 및 협업 문의 안내</p>
-          <h3>아이디어만 가져오세요. 나머지는 Telosix가 만듭니다.</h3>
-          <p>Telosix는 웹사이트 제작, 모바일 앱 개발, 맞춤형 플랫폼 구축 등 다양한 IT 외주 프로젝트와 협업 제안을 환영합니다. 클라이언트의 요구사항을 정확하고 섬세하게 분석하여, 최신 트렌드에 맞는 감각적인 UI/UX와 탄탄한 기능을 갖춘 결과물을 약속드립니다.</p>
-          <p>개인 포트폴리오용 웹사이트부터 비즈니스 목적의 상용 서비스까지, 책임감을 가지고 완성도 높은 최상의 결과물을 만들어 드립니다. 모든 외주 및 협업 문의는 <b>Telosix 공식 인스타그램 DM</b>으로 연락 주시면 가장 빠르고 친절하게 상담해 드리겠습니다.</p>
-          <div class="svc-chips"><span>웹사이트 제작</span><span>모바일 앱 개발</span><span>맞춤형 플랫폼 구축</span><span>포트폴리오 웹사이트</span><span>UI/UX 디자인</span></div>
-        </article>
-      </div>
-    </section>
-  </div>
-  <!-- FOOTER -->
-  <footer id="contact" class="cta-footer">
-    <div class="wrap footer-inner">
-      <p class="footer-cta">아이디어를 현실로,<br>Telosix와 함께 만들어요.</p>
-      <div class="footer-contacts">
-        <a class="btn btn-invert" href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">Telosix 디지털 명함 ↗</a>
-        <a class="btn btn-ghost" style="border-color:color-mix(in srgb, var(--accent-on) 35%, transparent); color:var(--accent-on); background:transparent;" href="mailto:woojin052501@gmail.com">woojin052501@gmail.com</a>
-      </div>
-      <div class="footer-row">
-        <span>© 2026 Telosix · CEO &amp; Founder 염우진</span>
-        <span class="mono">TELOSIX</span>
+        <p class="card-cap">↖ 카드 위에 마우스를 올려보세요</p>
       </div>
     </div>
-  </footer>
+    <div class="wordmark" aria-hidden="true">TELOSIX</div>
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>특목고 합격률 계산기</span><span>Kkeul 끌</span><span>Sogon 소곤</span><span>Certa</span><span>1,000원 광고판</span><span>Grid Shift</span><span>Web · App · Platform</span>
+        <span>특목고 합격률 계산기</span><span>Kkeul 끌</span><span>Sogon 소곤</span><span>Certa</span><span>1,000원 광고판</span><span>Grid Shift</span><span>Web · App · Platform</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="sec" aria-label="주요 지표" style="padding-top:clamp(56px,8vw,96px)">
+    <div class="wrap">
+      <div class="stats rv">
+        <div class="stat"><div class="n">1<small>위</small></div><div class="l">전국 중학생 창업아이디어 경진대회 금상</div></div>
+        <div class="stat"><div class="n">84<small>만+</small></div><div class="l">인스타그램 릴스 누적 조회수</div></div>
+        <div class="stat"><div class="n">2<small>만 뷰</small></div><div class="l">합격률 계산기 런칭 1개월</div></div>
+        <div class="stat"><div class="n">06</div><div class="l">직접 런칭한 서비스</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-no"><b>01</b> / About</span>
+        <h2 class="sec-title">About <em>Telosix</em></h2>
+      </div>
+      <div class="about">
+        <p class="lead rv">단순한 상상을 넘어 <span>일상과 교육에 혁신을 가져오는</span> IT 솔루션을 만드는 학생 창업 기업, Telosix입니다.</p>
+        <div class="col rv">
+          <h3>Company — Telosix</h3>
+          <p>아이디어를 현실로 만드는 IT 기업 <b>Telosix</b>는 일상과 교육에 혁신을 가져오는 IT 솔루션을 개발하는 학생 창업 기업입니다.</p>
+          <p>학생들의 공모전 및 대회 매칭 플랫폼 <b>Kkeul(끌)</b>과 실시간 익명 Q&amp;A 서비스 <b>Sogon(소곤)</b> 등 사용자의 니즈를 깊이 이해한 웹과 앱 프로덕트를 지속적으로 선보이고 있습니다.</p>
+          <p>사용자 경험을 최우선으로 생각하며, 나이와 한계를 뛰어넘어 톡톡 튀는 아이디어와 탄탄한 기술력으로 세상에 긍정적인 변화를 이끌어내는 것을 목표로 성장하고 있습니다.</p>
+        </div>
+        <div class="col rv">
+          <h3>CEO — 염우진</h3>
+          <p>개발하는 학생 창업가, Telosix의 CEO이자 아이디어를 코드로 직접 구현하는 <b>풀스택 웹 개발자</b>입니다. <b>한국디지털미디어고등학교</b> 진학을 꿈꾸며 기술과 비즈니스의 결합으로 새로운 가치를 만드는 것에 몰두하고 있습니다.</p>
+          <p><b>TypeScript · Next.js</b> 기반의 프론트엔드부터 <b>Supabase</b> 백엔드 설계, <b>C# · C++</b> 기반의 알고리즘 문제 해결까지 — 기획 단계의 아이디어 스케치부터 최종 배포와 운영까지 책임감 있게 프로젝트를 이끌고 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-no"><b>02</b> / Work</span>
+        <h2 class="sec-title">Selected <em>Work</em></h2>
+      </div>
+      <div class="work">
+        <article class="item rv">
+          <a class="cover" href="https://highschool-score.com" target="_blank" rel="noopener" aria-label="특목고 합격률 계산기 열기"></a>
+          <span class="no">01</span>
+          <h3><span class="ko">특목고 합격률 계산기</span></h3>
+          <div class="meta">
+            <div class="tags"><span>Web Platform</span><span>EdTech</span></div>
+            <p class="desc">고입·내신 성적으로 특목고 합격 가능성을 분석하는 플랫폼. 입시 정보 위키 <b>스코어위키</b>와 함께 운영합니다.</p>
+            <span class="kpi">런칭 1개월 <b>20,000뷰</b></span>
+            <span class="urls"><a href="https://highschool-score.com" target="_blank" rel="noopener">highschool-score.com</a><a href="https://scorewiki.vercel.app" target="_blank" rel="noopener">scorewiki.vercel.app</a></span>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </article>
+        <article class="item rv">
+          <a class="cover" href="https://kkeul.vercel.app" target="_blank" rel="noopener" aria-label="Kkeul 열기"></a>
+          <span class="no">02</span>
+          <h3>Kkeul <span class="ko">끌</span></h3>
+          <div class="meta">
+            <div class="tags"><span>Matching</span><span>Community</span></div>
+            <p class="desc">학생들의 공모전·대회 매칭 플랫폼. 흩어진 대회 정보를 모으고 팀원과 기회를 연결합니다.</p>
+            <span class="urls"><a href="https://kkeul.vercel.app" target="_blank" rel="noopener">kkeul.vercel.app</a></span>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </article>
+        <article class="item rv">
+          <span class="no">03</span>
+          <h3>Sogon <span class="ko">소곤</span></h3>
+          <div class="meta">
+            <div class="tags"><span class="new">NEW</span><span>Realtime</span><span>Q&amp;A</span></div>
+            <p class="desc">실시간 익명 Q&amp;A 서비스. 발표·수업·행사에서 부담 없이 묻고, 진행자는 실시간으로 답합니다.</p>
+          </div>
+          <span class="go na" aria-hidden="true">→</span>
+        </article>
+        <article class="item rv">
+          <a class="cover" href="https://certa-theta.vercel.app" target="_blank" rel="noopener" aria-label="Certa 열기"></a>
+          <span class="no">04</span>
+          <h3>Certa</h3>
+          <div class="meta">
+            <div class="tags"><span>Cert Platform</span></div>
+            <p class="desc">자격증 108종의 응시료·준비기간·합격률 비교, 맞춤 추천, 기출 유형 문제풀이와 커뮤니티.</p>
+            <span class="kpi"><b>108종</b> 자격증 · <b>300+</b> 문항</span>
+            <span class="urls"><a href="https://certa-theta.vercel.app" target="_blank" rel="noopener">certa-theta.vercel.app</a></span>
+          </div>
+          <span class="go" aria-hidden="true">→</span>
+        </article>
+        <article class="item rv">
+          <span class="no">05</span>
+          <h3><span class="ko">1,000원 광고판</span></h3>
+          <div class="meta">
+            <div class="tags"><span>Ad Marketplace</span></div>
+            <p class="desc">소상공인을 위한 부담 없는 가격의 광고 슬롯 플랫폼 — 실험적 비즈니스 모델.</p>
+            <span class="kpi">런칭 4일 매출 <b>260,000원</b></span>
+          </div>
+          <span class="go na" aria-hidden="true">→</span>
+        </article>
+        <article class="item rv">
+          <span class="no">06</span>
+          <h3>Grid Shift</h3>
+          <div class="meta">
+            <div class="tags"><span>Mobile Game</span><span>Android</span></div>
+            <p class="desc">직접 개발한 슬라이드 퍼즐 게임. Google Play 베타 테스트로 모바일 배포를 경험했습니다.</p>
+          </div>
+          <span class="go na" aria-hidden="true">→</span>
+        </article>
+      </div>
+      <div class="press rv">
+        <p><b>Press</b> — Privacy News 인터뷰 「AI로 에듀테크 생태계를 혁신하다」 보도</p>
+        <a href="https://privacynews.kr/s/394679" target="_blank" rel="noopener">기사 읽기 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="sec" id="awards">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-no"><b>03</b> / Awards</span>
+        <h2 class="sec-title"><span class="ko">수상경력</span></h2>
+      </div>
+      <div class="awards">
+        <div class="year now rv">
+          <div class="y">2026</div>
+          <ul>
+            <li class="top"><span class="d">2026.08</span><span class="t">전국 중학생 창업아이디어 경진대회 금상<small>한국디지털미디어고등학교 주최 · 전국 결선 15팀 중 1위</small></span><span class="badge gold">🏆 전국 1위</span></li>
+            <li><span class="d">2026.08</span><span class="t">제43회 한국정보올림피아드 2차대회 장려상<small>중등부 전체부문</small></span><span class="badge">KOI</span></li>
+            <li><span class="d">2026.07</span><span class="t">전국 중학생 창업아이디어 경진대회 본선 진출</span><span class="badge lime">TOP 15</span></li>
+            <li><span class="d">2026.06</span><span class="t">충남 학생 AI코딩 창의력 한마당 금상</span><span class="badge">금상</span></li>
+            <li><span class="d">2026.05</span><span class="t">제43회 한국정보올림피아드 1차대회 동상<small>중등부 지역부문</small></span><span class="badge">KOI</span></li>
+          </ul>
+        </div>
+        <div class="year rv">
+          <div class="y">2025</div>
+          <ul>
+            <li><span class="d">2025.06</span><span class="t">제2회 충남 학생 AI코딩 창의력 한마당 표창장</span><span class="badge">표창</span></li>
+            <li><span class="d">2025</span><span class="t">AI 코딩 창의 대회 1위<small>교내 대회</small></span><span class="badge">1위</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTS -->
+  <section class="sec" id="certs">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-no"><b>04</b> / Certifications</span>
+        <h2 class="sec-title"><span class="ko">자격증</span> <em>&amp; Certs</em></h2>
+      </div>
+      <div class="certs rv">
+        <div class="cert"><span class="iss"><span>Google</span></span><h3>Google Analytics 4</h3><p>웹 트래픽 분석과 데이터 기반 의사결정 역량 인증.</p><span class="st">공식 인증</span></div>
+        <div class="cert"><span class="iss"><span>PMI</span></span><h3>Project Management Ready</h3><p>PMI 프로젝트 관리 입문 자격증.</p><span class="st">기초 자격증</span></div>
+        <div class="cert"><span class="iss"><span>PMI</span><span>2026.07</span></span><h3>Fundamentals of Agile Project Management</h3><p>애자일 기반 프로젝트 관리 기초.</p><span class="st">수료</span></div>
+        <div class="cert"><span class="iss"><span>PMI</span><span>2026.07</span></span><h3>Fundamentals of Predictive Project Management</h3><p>예측형(전통적) 프로젝트 관리 기초.</p><span class="st">수료</span></div>
+        <div class="cert"><span class="iss"><span>PMI</span></span><h3>PMI Kickoff</h3><p>프로젝트 관리 기초 과정.</p><span class="st">수료</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="sec" id="stack">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-no"><b>05</b> / Stack</span>
+        <h2 class="sec-title">Tech <em>Stack</em></h2>
+      </div>
+      <div class="stack rv">
+        <div class="stk"><span class="c">Languages</span><div class="v">TypeScript, Python, C#, C/C++</div></div>
+        <div class="stk"><span class="c">Frontend</span><div class="v">Next.js, React</div></div>
+        <div class="stk"><span class="c">Backend · Infra</span><div class="v">Supabase <i>(설계 · RLS)</i>, Vercel, Capacitor</div></div>
+        <div class="stk"><span class="c">Algorithm</span><div class="v">C++ 문제 해결 <i>— KOI</i></div></div>
+        <div class="stk"><span class="c">AI · Method</span><div class="v">Vibe Coding, Cursor, Claude</div></div>
+        <div class="stk"><span class="c">Growth</span><div class="v">GA4, Search Console, AdSense, Kakao AdFit</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / OUTSOURCING -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="contact rv">
+        <p class="lbl">06 / 외주 · 협업 문의</p>
+        <h2>아이디어만 가져오세요.<br>나머지는 Telosix가 만듭니다.</h2>
+        <p>Telosix는 웹사이트 제작, 모바일 앱 개발, 맞춤형 플랫폼 구축 등 다양한 IT 외주 프로젝트와 협업 제안을 환영합니다. 클라이언트의 요구사항을 정확하고 섬세하게 분석해, 최신 트렌드에 맞는 감각적인 UI/UX와 탄탄한 기능을 갖춘 결과물을 약속드립니다.</p>
+        <p>개인 포트폴리오 웹사이트부터 비즈니스 목적의 상용 서비스까지. 모든 문의는 <b>Telosix 공식 인스타그램 DM</b>으로 주시면 가장 빠르고 친절하게 상담해 드립니다.</p>
+        <div class="steps">
+          <div class="step"><div class="k">01</div><div class="h">상담</div><div class="s">DM으로 요구사항 공유</div></div>
+          <div class="step"><div class="k">02</div><div class="h">기획</div><div class="s">구조 · UI/UX 설계</div></div>
+          <div class="step"><div class="k">03</div><div class="h">개발</div><div class="s">Next.js · Supabase</div></div>
+          <div class="step"><div class="k">04</div><div class="h">배포 · 운영</div><div class="s">런칭 후까지 책임</div></div>
+        </div>
+        <div class="svc"><span>웹사이트 제작</span><span>모바일 앱</span><span>맞춤형 플랫폼</span><span>포트폴리오 사이트</span><span>UI/UX</span></div>
+        <div class="actions">
+          <a class="btn solid" href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">인스타그램 · 명함 보기 <span class="arr">↗</span></a>
+          <a class="btn" href="mailto:woojin052501@gmail.com">woojin052501@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="big" aria-hidden="true">TELOSIX</p>
+    <div class="bar">
+      <span>© 2026 Telosix · CEO &amp; Founder 염우진</span>
+      <span><a href="https://tapple.co.kr/card/card-0RSGV17S3FYKF" target="_blank" rel="noopener">Digital Card ↗</a> · <a href="mailto:woojin052501@gmail.com">Email</a> · <button class="theme-btn" id="themeBtn" type="button">테마 전환</button></span>
+    </div>
+  </div>
+</footer>
+
 <script>
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var els = document.querySelectorAll(".reveal");
+
+  // header state
+  var hdr = document.getElementById("hdr");
+  function onScroll() { hdr.classList.toggle("scrolled", window.scrollY > 10); }
+  document.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // reveal
+  var els = document.querySelectorAll(".rv");
   if (reduced || !("IntersectionObserver" in window)) {
     els.forEach(function (el) { el.classList.add("in"); });
-    return;
+  } else {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
   }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  els.forEach(function (el) { io.observe(el); });
-})();
-(function () {
-  var links = document.querySelectorAll('nav.top a[href^="#"]');
-  var sections = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
-  if (!("IntersectionObserver" in window) || !sections.length) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      var link = document.querySelector('nav.top a[href="#' + entry.target.id + '"]');
-      if (!link) return;
-      if (entry.isIntersecting) {
-        links.forEach(function (l) { l.classList.remove("active"); });
-        link.classList.add("active");
-      }
-    });
-  }, { rootMargin: "-45% 0px -50% 0px" });
-  sections.forEach(function (s) { io.observe(s); });
-})();
-(function () {
-  var bar = document.getElementById("scrollProgress");
-  if (!bar) return;
-  function update() {
-    var doc = document.documentElement;
-    var scrollable = doc.scrollHeight - doc.clientHeight;
-    var pct = scrollable > 0 ? (doc.scrollTop / scrollable) * 100 : 0;
-    bar.style.width = pct + "%";
+
+  // active nav
+  var links = document.querySelectorAll('.nav a[href^="#"]');
+  if ("IntersectionObserver" in window) {
+    var nio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (l) { l.classList.toggle("active", l.getAttribute("href") === "#" + e.target.id); });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    links.forEach(function (l) { var s = document.querySelector(l.getAttribute("href")); if (s) nio.observe(s); });
   }
-  document.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
-  update();
-})();
-(function () {
-  if (window.matchMedia("(hover: none)").matches) return;
-  var cards = document.querySelectorAll(".bento-card");
-  cards.forEach(function (card) {
+
+  // mobile drawer
+  var burger = document.getElementById("burger"), drawer = document.getElementById("drawer");
+  function setMenu(open) {
+    drawer.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+  }
+  burger.addEventListener("click", function () { setMenu(!drawer.classList.contains("open")); });
+  drawer.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+  window.addEventListener("resize", function () { if (window.innerWidth > 860) setMenu(false); });
+
+  // 3D card tilt
+  var card = document.getElementById("bizcard");
+  if (card && !reduced && window.matchMedia("(hover: hover)").matches) {
     card.addEventListener("mousemove", function (e) {
       var r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
-      card.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100) + "%");
+      var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      card.classList.add("live");
+      card.style.setProperty("--ry", ((x - .5) * 22) + "deg");
+      card.style.setProperty("--rx", ((.5 - y) * 18) + "deg");
+      card.style.setProperty("--gx", (x * 100) + "%");
+      card.style.setProperty("--gy", (y * 100) + "%");
     });
-  });
-})();
-(function () {
-  var btn = document.getElementById("menuBtn");
-  var panel = document.getElementById("mobileNavWrap");
-  if (!btn || !panel) return;
-  function closeMenu() {
-    panel.classList.remove("open");
-    btn.setAttribute("aria-expanded", "false");
+    card.addEventListener("mouseleave", function () {
+      card.classList.remove("live");
+      card.style.setProperty("--rx", "0deg"); card.style.setProperty("--ry", "0deg");
+    });
   }
-  function toggleMenu() {
-    var isOpen = panel.classList.toggle("open");
-    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  }
-  btn.addEventListener("click", toggleMenu);
-  panel.querySelectorAll("a").forEach(function (a) {
-    a.addEventListener("click", closeMenu);
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMenu();
-  });
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 700) closeMenu();
+
+  // theme toggle (per-viewer preference)
+  var root = document.documentElement, btn = document.getElementById("themeBtn");
+  try { var saved = localStorage.getItem("telosix-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme") || "dark";
+    var next = cur === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("telosix-theme", next); } catch (e) {}
   });
 })();
 </script>
